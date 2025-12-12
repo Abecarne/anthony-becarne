@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import { Category, WorkProject } from "./usePortfolioData";
+import type { Category, WorkProject } from "@/types";
 
 interface UseProjectFilterProps {
   projects: WorkProject[];
