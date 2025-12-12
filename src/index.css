@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-sans: "Signika", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  --font-mono: "SUSE Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+    monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+.mesh-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mesh-background svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  transition: opacity 0.3s ease;
+  filter: drop-shadow(0 0 18px rgba(37, 99, 235, 0.2));
+}
+
+@keyframes mesh-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.mesh-background svg:hover {
+  animation: mesh-pulse 2s ease-in-out infinite;
+}
