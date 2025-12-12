@@ -285,7 +285,7 @@
       "company": "Verdia",
       "image": "/assets/verdia_logo.jpeg",
       "type": "Freelance",
-      "duration": "Aug - Sept 2025",
+      "duration": "June - Aug 2025",
       "location": "Remote",
       "description": "Full-stack development of a platform for designing sustainable landscaped plant beds. Creation of a complete PoC to pitch the concept to an incubator.",
       "responsibilities": [
@@ -330,7 +330,7 @@
       "company": "Epitech",
       "image": "/assets/epitech_logo.png",
       "type": "Fixed-Term Contract",
-      "duration": "Mar 2025 | 7 months",
+      "duration": "Mar - Aug 2025",
       "location": "France",
       "description": "Assisting students in their learning process, providing support and guidance in their technical projects. In charge of organizing workshops and events to enhance the learning experience.",
       "responsibilities": [
@@ -352,7 +352,7 @@
       "company": "Verdia",
       "image": "/assets/verdia_logo.jpeg",
       "type": "Internship",
-      "duration": "Jan 2025 | 1 month",
+      "duration": "Jan 2025",
       "location": "France",
       "description": "Updated and maintained the company's e-commerce website. Developed new features and optimized the user experience. Worked with an existing Odoo project for a national client.",
       "responsibilities": [
@@ -374,7 +374,7 @@
       "company": "EXOTEC",
       "image": "/assets/exotec_logo.png",
       "type": "Internship",
-      "duration": "Apr 2023 | 4 months",
+      "duration": "Apr - Jul 2023",
       "location": "France",
       "description": "Procedural generation of 3D models for the training of Machine Learning models for computer vision. Development with Python, Blender API for 3D assets and OpenCV for texture generation.",
       "responsibilities": [
@@ -396,7 +396,7 @@
       "company": "AQUILAB",
       "image": "/assets/aquilab_logo.jpeg",
       "type": "Internship",
-      "duration": "Jul 2021 | 6 months",
+      "duration": "Jul - Dec 2021",
       "location": "France",
       "description": "Update of the company's medicine management software. Development with C++, Qt and Boost libraries.",
       "responsibilities": [
@@ -418,7 +418,7 @@
       "company": "Open Classrooms",
       "image": "/assets/openclassrooms_logo.jpg",
       "type": "Internship",
-      "duration": "Aug 2019 | 2 weeks",
+      "duration": "Aug 2019",
       "location": "France",
       "description": "Development of dynamic and responsive web pages. Development with HTML, CSS and JavaScript.",
       "responsibilities": [
