@@ -1,143 +1,110 @@
+import type { ResourceLanguage } from "i18next";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import type { PortfolioData } from "../types";
 
-interface PersonalInfo {
-  name: string;
-  title: string;
-  subtitle: string;
-  bio: string;
-  location: string;
-  email: string;
-  phone: string;
-  profileImage: string;
-  socialLinks: {
-    linkedin: string;
-    github: string;
-    twitter: string;
-  };
-}
+const isRecord = (value: unknown): value is Record<string, unknown> =>
+  typeof value === "object" && value !== null;
 
-export interface Category {
-  id: string;
-  name: string;
-  description: string;
-}
+const isPortfolioData = (value: unknown): value is PortfolioData => {
+  if (!isRecord(value)) return false;
+  const candidate = value as Partial<PortfolioData>;
+  return (
+    typeof candidate.personal === "object" &&
+    Array.isArray(candidate.categories) &&
+    Array.isArray(candidate.work) &&
+    typeof candidate.contact === "object"
+  );
+};
 
-export interface WorkProject {
-  id: number;
-  title: string;
-  category: string;
-  client: string;
-  description: string;
-  technologies: string[];
-  duration: string;
-  year: string;
-  image: string;
-  video: string;
-  hasVideo: boolean;
-  demoUrl: string;
-  githubUrl: string;
-}
+function resolvePortfolioData(
+  bundle: ResourceLanguage | undefined
+): PortfolioData {
+  if (!bundle) {
+    throw new Error("Portfolio translations are not loaded");
+  }
 
-interface Education {
-  id: number;
-  institution: string;
-  degree: string;
-  field: string;
-  year: string;
-  description: string;
-  image: string;
-  achievements: string[];
-}
+  if (isRecord(bundle) && "portfolio" in bundle) {
+    const typed = bundle as { portfolio?: unknown };
+    if (isPortfolioData(typed.portfolio)) {
+      return typed.portfolio;
+    }
+  }
 
-interface Experience {
-  id: number;
-  position: string;
-  company: string;
-  image?: string;
-  type: string;
-  duration: string;
-  location: string;
-  description: string;
-  responsibilities: string[];
-  technologies: string[];
-  achievements: string[];
-}
+  if (isPortfolioData(bundle)) {
+    return bundle;
+  }
 
-interface Skills {
-  showcase: string[];
-  frontend: string[];
-  backend: string[];
-  tools: string[];
-  soft: string[];
-}
-
-interface Contact {
-  availability: string;
-  preferredContact: string;
-  timezone: string;
-  languages: string[];
-  services: string[];
-  rates: {
-    daily: string;
-    project: string;
-    retainer: string;
-  };
-}
-
-export interface PortfolioData {
-  personal: PersonalInfo;
-  categories: Category[];
-  work: WorkProject[];
-  education: Education[];
-  experience: Experience[];
-  skills: Skills;
-  contact: Contact;
+  throw new Error("Portfolio data structure is invalid");
 }
 
 export function usePortfolioData() {
+  const { i18n } = useTranslation();
   const [data, setData] = useState<PortfolioData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   useEffect(() => {
-    async function fetchData() {
+    const loadPortfolioData = () => {
+      setLoading(true);
       try {
-        const response = await fetch('/data.json');
-        if (!response.ok) {
-          throw new Error('Failed to fetch portfolio data');
-        }
-        const portfolioData: PortfolioData = await response.json();
+        const defaultNS = i18n.options.defaultNS;
+        const namespace =
+          typeof defaultNS === "string"
+            ? defaultNS
+            : Array.isArray(defaultNS) && defaultNS.length > 0
+            ? defaultNS[0]
+            : "translation";
+        const bundle = i18n.getResourceBundle(
+          i18n.language,
+          namespace
+        ) as ResourceLanguage | undefined;
+        const portfolioData = resolvePortfolioData(bundle);
         setData(portfolioData);
+        setError(null);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'An error occurred');
+        setData(null);
+        setError(err instanceof Error ? err.message : "An error occurred");
       } finally {
         setLoading(false);
       }
-    }
+    };
 
-    fetchData();
-  }, []);
+    loadPortfolioData();
+
+    const handleLanguageChange = () => {
+      loadPortfolioData();
+    };
+
+    i18n.on("languageChanged", handleLanguageChange);
+    return () => {
+      i18n.off("languageChanged", handleLanguageChange);
+    };
+  }, [i18n]);
 
   // Filter projects based on selected category
-  const filteredProjects = data?.work.filter(project => 
-    selectedCategory === 'all' || project.category === selectedCategory
-  ) || [];
+  const filteredProjects =
+    data?.work.filter(
+      (project) =>
+        selectedCategory === "all" || project.category === selectedCategory
+    ) || [];
 
   // Get projects count for each category
   const getCategoryCount = (categoryId: string) => {
     if (!data) return 0;
-    if (categoryId === 'all') return data.work.length;
-    return data.work.filter(project => project.category === categoryId).length;
+    if (categoryId === "all") return data.work.length;
+    return data.work.filter((project) => project.category === categoryId)
+      .length;
   };
 
-  return { 
-    data, 
-    loading, 
-    error, 
-    selectedCategory, 
-    setSelectedCategory, 
-    filteredProjects, 
-    getCategoryCount 
+  return {
+    data,
+    loading,
+    error,
+    selectedCategory,
+    setSelectedCategory,
+    filteredProjects,
+    getCategoryCount,
   };
 }

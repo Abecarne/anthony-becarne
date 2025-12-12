@@ -1,9 +1,12 @@
 import CategorySelector from "@/components/CategorySelector";
-import ExperienceCarousel from "@/components/ExperienceCarousel";
 import MeshBackground from "@/components/MeshBackground";
 import WorkGrid from "@/components/WorkGrid";
 import { usePortfolioData } from "@/hooks/usePortfolioData";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
+import { HeroSection } from "@/components/HeroSection";
+import { Navbar } from "@/components/Navbar";
 
 function HomePage() {
   const {
@@ -18,21 +21,8 @@ function HomePage() {
 
   const [activeSection, setActiveSection] = useState("home");
   const [showNavbar, setShowNavbar] = useState(false);
-  const [expandedExp, setExpandedExp] = useState<number | null>(null);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
+  const [expandedExp, setExpandedExp] = useState<number[] | null>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,7 +65,7 @@ function HomePage() {
     return (
       <div className="flex items-center justify-center h-screen">
         <div className="text-red-500 text-center">
-          <p className="text-xl font-semibold">Error loading portfolio data</p>
+          <p className="text-xl font-semibold">{t("page.error")}</p>
           <p className="text-sm mt-2">{error}</p>
         </div>
       </div>
@@ -84,131 +74,25 @@ function HomePage() {
 
   if (!data) return null;
 
-  const navItems = [
-    { id: "home", label: "Home" },
-    { id: "work", label: "Work" },
-    { id: "experience", label: "Experience" },
-    { id: "education", label: "Education" },
-    { id: "contact", label: "Contact" },
-  ];
-
   return (
     <div className="relative min-h-screen">
-      {/* Fixed Navigation Bar */}
-      <nav
-        className={`fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-md z-50 transition-transform duration-300 ${
-          showNavbar ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between h-20">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                {data.personal.name}
-              </span>
-            </div>
-            <div className="hidden md:flex gap-1">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                    activeSection === item.id
-                      ? "bg-blue-600 text-white shadow-md"
-                      : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-            {/* Mobile menu */}
-            <div className="md:hidden">
-              <select
-                value={activeSection}
-                onChange={(e) => scrollToSection(e.target.value)}
-                className="px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 font-medium"
-              >
-                {navItems.map((item) => (
-                  <option key={item.id} value={item.id}>
-                    {item.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar
+        activeSection={activeSection}
+        showNavbar={showNavbar}
+        data={data}
+      />
 
-      {/* Hero Section with Carousel */}
-      <div className="min-h-screen flex flex-col">
-        <section
-          id="home"
-          className="flex-1 flex items-center justify-center px-6 py-16 bg-gradient-to-br from-blue-50/30 to-purple-50/30 relative overflow-hidden"
-        >
-          <div className="max-w-7xl w-full mx-auto pt-20 relative z-10">
-            <div className="text-center">
-              <h1
-                className="text-7xl md:text-8xl lg:text-9xl font-black uppercase mb-6 leading-none tracking-tight"
-                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-              >
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  {data.personal.name}
-                </span>
-              </h1>
-
-              <h2
-                className="text-3xl md:text-4xl text-gray-800 font-bold uppercase mb-6 tracking-wider"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
-              >
-                {data.personal.title}
-              </h2>
-
-              <p className="text-xl text-gray-700 leading-relaxed max-w-2xl mb-12 mx-auto">
-                {data.personal.bio}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://calendly.com/anthony-becarne/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold text-base transition-all shadow-lg uppercase tracking-wide"
-                >
-                  Book a Call
-                </a>
-
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold text-base transition-colors shadow-lg uppercase tracking-wide"
-                >
-                  Get In Touch
-                </button>
-
-                <button
-                  onClick={() => scrollToSection("work")}
-                  className="bg-white hover:bg-gray-50 text-blue-600 px-6 py-3 rounded-lg font-semibold text-base border-2 border-blue-600 transition-colors shadow-lg uppercase tracking-wide"
-                >
-                  View My Work
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <ExperienceCarousel experiences={data.experience} />
-      </div>
+      <HeroSection data={data} />
 
       {/* Work Section */}
       <section id="work" className="min-h-screen px-6 py-24 bg-white/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              My Work
+              {t("page.work.title")}
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Here are some of the projects I&apos;ve worked on, showcasing my
-              expertise in fullstack development and modern web technologies.
+              {t("page.work.description")}
             </p>
           </div>
 
@@ -223,8 +107,10 @@ function HomePage() {
 
           <div className="mt-8 text-center">
             <p className="text-gray-600">
-              Showing {filteredProjects.length} project
-              {filteredProjects.length !== 1 ? "s" : ""}
+              {t("page.work.showing", {
+                count: filteredProjects.length,
+                total: data.work.length,
+              })}
               {selectedCategory !== "all" &&
                 ` in ${
                   data.categories.find((c) => c.id === selectedCategory)?.name
@@ -242,12 +128,10 @@ function HomePage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Professional Experience
+              {t("page.experience.title")}
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              My journey through different roles and companies, building
-              expertise in fullstack development and delivering impactful
-              solutions.
+              {t("page.experience.description")}
             </p>
           </div>
 
@@ -300,19 +184,22 @@ function HomePage() {
                     <button
                       className="text-blue-600 font-semibold flex items-center gap-1 hover:underline mb-2"
                       onClick={() =>
-                        setExpandedExp(expandedExp === exp.id ? null : exp.id)
+                        setExpandedExp(
+                          expandedExp?.find((id) => id === exp.id)
+                            ? expandedExp.filter((id) => id !== exp.id)
+                            : [...(expandedExp || []), exp.id]
+                        )
                       }
-                      aria-expanded={expandedExp === exp.id}
                     >
-                      {expandedExp === exp.id
-                        ? "- Hide details"
-                        : "+ See details"}
+                      {expandedExp?.find((id) => id === exp.id)
+                        ? t("page.experience.hideDetails")
+                        : t("page.experience.seeDetails")}
                     </button>
-                    {expandedExp === exp.id && (
+                    {expandedExp?.find((id) => id === exp.id) && (
                       <div className="mt-4">
                         <div className="mb-4">
                           <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                            Key Responsibilities
+                            {t("page.experience.responsibilities")}
                           </h4>
                           <ul className="space-y-2">
                             {exp.responsibilities.map(
@@ -332,7 +219,7 @@ function HomePage() {
                         </div>
                         <div className="mb-4">
                           <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                            Technologies Used
+                            {t("page.experience.technologies")}
                           </h4>
                           <div className="flex flex-wrap gap-2">
                             {exp.technologies.map((tech) => (
@@ -347,7 +234,7 @@ function HomePage() {
                         </div>
                         <div>
                           <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                            Key Achievements
+                            {t("page.experience.achievements")}
                           </h4>
                           <ul className="space-y-2">
                             {exp.achievements.map((achievement, achIndex) => (
@@ -378,11 +265,10 @@ function HomePage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Education
+              {t("page.education.title")}
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              My academic journey in computer science and software development,
-              building the foundation for my career in technology.
+              {t("page.education.description")}
             </p>
           </div>
 
@@ -438,7 +324,7 @@ function HomePage() {
 
                       <div>
                         <h4 className="text-lg font-semibold text-gray-900 mb-3">
-                          Key Achievements
+                          {t("page.education.achievements")}
                         </h4>
                         <ul className="space-y-2">
                           {edu.achievements.map(
@@ -475,11 +361,10 @@ function HomePage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Get In Touch
+              {t("page.contact.title")}
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Ready to start your next project? Let&apos;s discuss how I can
-              help bring your ideas to life with modern web technologies.
+              {t("page.contact.description")}
             </p>
           </div>
 
@@ -487,17 +372,14 @@ function HomePage() {
             <div className="space-y-8">
               <div className="bg-white rounded-xl shadow-lg border p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Contact Information
+                  {t("page.contact.infos.title")}
                 </h2>
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-xl">📧</span>
-                    </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">
-                        Email
+                        {t("page.contact.infos.email")}
                       </h3>
                       <a
                         href={`mailto:${data.personal.email}`}
@@ -509,12 +391,9 @@ function HomePage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-xl">📱</span>
-                    </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">
-                        Phone
+                        {t("page.contact.infos.phone")}
                       </h3>
                       <a
                         href={`tel:${data.personal.phone}`}
@@ -526,24 +405,18 @@ function HomePage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-xl">📍</span>
-                    </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">
-                        Location
+                        {t("page.contact.infos.location")}
                       </h3>
                       <p className="text-gray-600">{data.personal.location}</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-xl">🕒</span>
-                    </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">
-                        Timezone
+                        {t("page.contact.infos.timezone")}
                       </h3>
                       <p className="text-gray-600">{data.contact.timezone}</p>
                     </div>
@@ -552,7 +425,7 @@ function HomePage() {
 
                 <div className="mt-8 pt-6 border-t border-gray-200">
                   <h3 className="font-semibold text-gray-900 mb-4">
-                    Connect With Me
+                    {t("page.contact.infos.connect")}
                   </h3>
                   <div className="flex gap-4">
                     <a
@@ -605,15 +478,14 @@ function HomePage() {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                   <h3 className="text-lg font-semibold text-gray-900">
-                    Availability
+                    {t("page.contact.availability.title")}
                   </h3>
                 </div>
                 <p className="text-green-600 font-semibold mb-2">
                   {data.contact.availability}
                 </p>
                 <p className="text-gray-600 text-sm">
-                  Currently accepting new projects. Typical response time: 24
-                  hours
+                  {t("page.contact.availability.description")}
                 </p>
               </div>
             </div>
@@ -621,7 +493,7 @@ function HomePage() {
             <div className="space-y-8">
               <div className="bg-white rounded-xl shadow-lg border p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Services Offered
+                  {t("page.contact.services.title")}
                 </h2>
                 <div className="space-y-4">
                   {data.contact.services.map((service) => (
@@ -635,23 +507,29 @@ function HomePage() {
 
               <div className="bg-white rounded-xl shadow-lg border p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Pricing
+                  {t("page.contact.pricing.title")}
                 </h2>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center pb-3 border-b border-gray-100">
-                    <span className="text-gray-700">Daily</span>
+                    <span className="text-gray-700">
+                      {t("page.contact.pricing.daily")}
+                    </span>
                     <span className="font-semibold text-gray-900">
                       {data.contact.rates.daily}
                     </span>
                   </div>
                   <div className="flex justify-between items-center pb-3 border-b border-gray-100">
-                    <span className="text-gray-700">Project-based</span>
+                    <span className="text-gray-700">
+                      {t("page.contact.pricing.project")}
+                    </span>
                     <span className="font-semibold text-gray-900">
                       {data.contact.rates.project}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-700">Monthly Retainer</span>
+                    <span className="text-gray-700">
+                      {t("page.contact.pricing.retainer")}
+                    </span>
                     <span className="font-semibold text-gray-900">
                       {data.contact.rates.retainer}
                     </span>
@@ -661,7 +539,7 @@ function HomePage() {
 
               <div className="bg-white rounded-xl shadow-lg border p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Languages
+                  {t("page.contact.languages.title")}
                 </h2>
                 <div className="space-y-3">
                   {data.contact.languages.map((language) => (
@@ -678,12 +556,10 @@ function HomePage() {
           <div className="text-center">
             <div className="bg-blue-50 rounded-xl p-8 border border-blue-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Ready to Start Your Project?
+                {t("page.cta.title")}
               </h3>
               <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                Whether you need a complete web application, API development, or
-                technical consultation, I&apos;m here to help bring your vision
-                to reality.
+                {t("page.cta.description")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -692,19 +568,19 @@ function HomePage() {
                   rel="noopener noreferrer"
                   className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold text-base transition-all shadow-lg"
                 >
-                  Book a Call
+                  {t("page.cta.book")}
                 </a>
                 <a
                   href={`mailto:${data.personal.email}?subject=Project Inquiry`}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg"
                 >
-                  Send Email
+                  {t("page.cta.email")}
                 </a>
                 <a
                   href={`tel:${data.personal.phone}`}
                   className="bg-white hover:bg-gray-50 text-blue-600 px-8 py-3 rounded-lg font-semibold border-2 border-blue-600 transition-colors shadow-lg"
                 >
-                  Call Now
+                  {t("page.cta.call")}
                 </a>
               </div>
             </div>

@@ -56,7 +56,13 @@
       "category": "web-development",
       "client": "Personal Project",
       "description": "A personal portfolio website showcasing my projects and skills.",
-      "technologies": ["React.js", "Next.js", "TypeScript", "TailwindCSS", "Git"],
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Git"
+      ],
       "duration": "1 week",
       "year": "2024",
       "image": "/assets/works/portfolio.png",
@@ -71,7 +77,13 @@
       "category": "web-development",
       "client": "Personal Project",
       "description": "A 3D asset viewer application. The application allows users to upload and view 3D models in various formats. The application is built with React.js and Three.js.",
-      "technologies": ["React.js", "Next.js", "TypeScript", "TailwindCSS", "Three.js"],
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Three.js"
+      ],
       "duration": "1 week",
       "year": "2025",
       "image": "/assets/works/3d_asset_viewer.png",
@@ -131,7 +143,13 @@
       "category": "web-development",
       "client": "Personal Project",
       "description": "A personal portfolio website showcasing my projects and skills.",
-      "technologies": ["React.js", "Next.js", "TypeScript", "TailwindCSS", "Git"],
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Git"
+      ],
       "duration": "1 week",
       "year": "2024",
       "image": "/assets/works/portfolio-old.png",
@@ -146,7 +164,14 @@
       "category": "web-development",
       "client": "University Project",
       "description": "ITFFF / Zapier-like fullstack web and mobile application that uses different APIs such as Youtube, Gmail, Discord, Twitter and GitHub. Users can create an account, connect their services, and create applets.",
-      "technologies": ["React.js", "Node.js", "Javascript", "MySQL", "Express", "Scss"],
+      "technologies": [
+        "React.js",
+        "Node.js",
+        "Javascript",
+        "MySQL",
+        "Express",
+        "Scss"
+      ],
       "duration": "3 months",
       "year": "2023",
       "image": "/assets/works/area_preview.png",
@@ -248,7 +273,15 @@
         "Adding and enhancing features dedicated to technical site visits (mobile/web flows, forms, field data capture, data management).",
         "Close collaboration with the product team to refine business needs and deliver solutions tailored to photovoltaic installers."
       ],
-      "technologies": ["React.js", "Next.js", "TypeScript", "API", "i18n", "TailwindCSS", "Git"],
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "API",
+        "i18n",
+        "TailwindCSS",
+        "Git"
+      ],
       "achievements": [
         "Successful internationalization of the platform into 6 languages",
         "Improved user experience through UI/UX optimizations",
@@ -269,7 +302,6 @@
         "Bug fixing, editing-flow optimization, and overall stability improvements.",
         "Partial UI/UX redesign for smoother and more intuitive navigation.",
         "Building new features modifying the behavior of the video-editing timeline (interaction, selection, manipulation of video elements).",
-        "Adding and enhancing features dedicated to technical site visits (mobile/web flows, forms, field data capture, data management).",
         "Direct collaboration with the product team to deliver rapid, testable iterations."
       ],
       "technologies": ["Flutter", "Dart", "Rust", "Git", "SQL"],
@@ -294,7 +326,14 @@
         "Development of custom APIs and integration of AI features via the OpenAI API.",
         "Supporting the client from initial idea to functional prototype."
       ],
-      "technologies": ["React.js", "Next.js", "TypeScript", "Airtable", "OpenAI", "Git"],
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Airtable",
+        "OpenAI",
+        "Git"
+      ],
       "achievements": [
         "Successful development of a functional PoC for incubator pitching",
         "Integration of AI features to enhance user experience",
@@ -317,7 +356,18 @@
         "Setting up a dashboard to track tickets and customer issues",
         "Organizing sprints and team coordination, in addition to development"
       ],
-      "technologies": ["Python", "PostgreSQL", "Vue.js", "OpenAI", "LLM", "FastAPI", "Zendesk", "Gorgias", "Shopify", "PrestaShop"],
+      "technologies": [
+        "Python",
+        "PostgreSQL",
+        "Vue.js",
+        "OpenAI",
+        "LLM",
+        "FastAPI",
+        "Zendesk",
+        "Gorgias",
+        "Shopify",
+        "PrestaShop"
+      ],
       "achievements": [
         "Development of an innovative AI solution for customer support automation",
         "Successful integration of multiple ticketing and e-commerce platforms",
@@ -339,7 +389,12 @@
         "Specialize in teaching web development, software engineering, and video game development",
         "Mentor students in their technical projects and assignments"
       ],
-      "technologies": ["Web Development", "Software Engineering", "Game Development", "Teaching"],
+      "technologies": [
+        "Web Development",
+        "Software Engineering",
+        "Game Development",
+        "Teaching"
+      ],
       "achievements": [
         "Successfully mentored multiple student cohorts",
         "Organized engaging technical workshops",
@@ -361,7 +416,13 @@
         "Worked with Odoo platform for client projects",
         "Optimized website performance and user interface"
       ],
-      "technologies": ["Odoo", "E-commerce", "Web Development", "Python", "JavaScript"],
+      "technologies": [
+        "Odoo",
+        "E-commerce",
+        "Web Development",
+        "Python",
+        "JavaScript"
+      ],
       "achievements": [
         "Successfully updated company e-commerce platform",
         "Improved user experience through new feature development",
@@ -383,7 +444,13 @@
         "Worked with Blender API for 3D asset creation",
         "Implemented OpenCV for texture generation and processing"
       ],
-      "technologies": ["Python", "Blender API", "OpenCV", "Machine Learning", "3D Modeling"],
+      "technologies": [
+        "Python",
+        "Blender API",
+        "OpenCV",
+        "Machine Learning",
+        "3D Modeling"
+      ],
       "achievements": [
         "Successfully generated procedural 3D models for ML training",
         "Improved computer vision model accuracy through better training data",
@@ -436,29 +503,38 @@
     }
   ],
   "skills": {
-    "showcase": [
-      "React.js", "Next.js", "TypeScript", "Python"
-    ],
+    "showcase": ["React.js", "Next.js", "TypeScript", "Python"],
     "frontend": [
-      "React.js", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", 
-      "TailwindCSS", "Sass"
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "TailwindCSS",
+      "Sass"
     ],
-    "backend": [
-      "Node.js", "Python", "SQL", "MongoDB", "Express"
-    ],
-    "tools": [
-      "Git", "Linux", "Blender", "Unity", "Unreal Engine"
-    ],
+    "backend": ["Node.js", "Python", "SQL", "MongoDB", "Express"],
+    "tools": ["Git", "Linux", "Blender", "Unity", "Unreal Engine"],
     "soft": [
-      "Project Management", "Client Communication", "Team Leadership", 
-      "Problem Solving", "Teaching", "Mentoring", "Code Review"
+      "Project Management",
+      "Client Communication",
+      "Team Leadership",
+      "Problem Solving",
+      "Teaching",
+      "Mentoring",
+      "Code Review"
     ]
   },
   "contact": {
     "availability": "Available for new projects",
     "preferredContact": "email",
     "timezone": "Central European Time (CET)",
-    "languages": ["French (Native)", "English (Fluent)", "Spanish (Conversational)"],
+    "languages": [
+      "French (Native)",
+      "English (Fluent)",
+      "Spanish (Conversational)"
+    ],
     "services": [
       "Full-Stack Web Development",
       "Frontend Development",
@@ -469,6 +545,81 @@
       "daily": "300-400€/day",
       "project": "Starting from 1 500€",
       "retainer": "Starting from 3 000€/month"
+    }
+  },
+  "page": {
+    "carousel": "Trusted by industry leaders",
+    "error": "Error loading portfolio data.",
+    "nav": {
+      "home": "Home",
+      "work": "Work",
+      "education": "Education",
+      "experience": "Experience",
+      "contact": "Contact"
+    },
+    "work": {
+      "title": "My Work",
+      "description": "Here are some of the projects I've worked on, showcasing my expertise in fullstack development and modern web technologies.",
+      "descriptionTitle": "Description",
+      "technologies": "Technologies Used",
+      "details": "Project Details",
+      "duration": "Duration",
+      "year": "Year",
+      "demo": "View Demo",
+      "code": "View Code",
+      "noProjects": "No projects found for this category.",
+      "showing": "Showing {{count}} of {{total}} projects"
+    },
+    "experience": {
+      "title": "Professional Experience",
+      "description": "My journey through different roles and companies, building expertise in fullstack development and delivering impactful solutions.",
+      "responsibilities": "Responsibilities",
+      "technologies": "Technologies Used",
+      "achievements": "Key Achievements",
+      "seeDetails": "+ See details",
+      "hideDetails": "- Hide details"
+    },
+    "education": {
+      "title": "Education",
+      "description": "My academic journey in computer science and software development, building the foundation for my career in technology.",
+      "achievements": "Key Achievements"
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "description": "Ready to start your next project? Let's discuss how I can help bring your ideas to life with modern web technologies.",
+      "infos": {
+        "title": "Contact Information",
+        "email": "Email",
+        "phone": "Phone",
+        "location": "Location",
+        "timezone": "Timezone",
+        "connect": "Connect with me on"
+      },
+      "availability": {
+        "title": "Availability",
+        "description": "I am currently open for new projects."
+      },
+      "services": {
+        "title": "Services Offered"
+      },
+      "pricing": {
+        "title": "Pricing",
+        "daily": "Daily Rate",
+        "project": "Project Rate",
+        "retainer": "Monthly Retainer"
+      },
+      "languages": {
+        "title": "Languages"
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "description": "Whether you need a complete web application, API development, or technical consultation, I'm here to help bring your vision to reality.",
+      "book": "Book a Call",
+      "email": "Send Email",
+      "call": "Call Now",
+      "viewWork": "View My Work",
+      "downloadCV": "Download CV"
     }
   }
 }

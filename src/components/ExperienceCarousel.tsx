@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 interface Experience {
   id: number;
@@ -15,13 +16,14 @@ export default function ExperienceCarousel({
   experiences,
 }: ExperienceCarouselProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
     let scrollPosition = 0;
-    const scrollSpeed = 0.8;
+    const scrollSpeed = 1;
 
     const scroll = () => {
       scrollPosition += scrollSpeed;
@@ -44,7 +46,6 @@ export default function ExperienceCarousel({
     return () => cancelAnimationFrame(animationFrame);
   }, [experiences]);
 
-  // Dupliquer les expériences pour un effet de boucle infinie
   const duplicatedExperiences = [
     ...experiences,
     ...experiences,
@@ -55,7 +56,7 @@ export default function ExperienceCarousel({
     <div className="w-full bg-white/80 backdrop-blur-sm border-y border-gray-200 py-8 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-4">
         <h3 className="text-center text-sm font-semibold text-gray-600 uppercase tracking-wider">
-          Trusted by Industry Leaders
+          {t("page.carousel")}
         </h3>
       </div>
 

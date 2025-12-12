@@ -1,0 +1,625 @@
+{
+  "personal": {
+    "name": "Anthony Becarne",
+    "title": "Freelance - Développeur Software",
+    "bio": "Développeur software passionné, expert en React.js et Next.js. Je crée des applications scalables, user-friendly et j'aide les entreprises à développer et transformer leur présence digitale.",
+    "location": "France",
+    "email": "anthony.becarne@gmail.com",
+    "phone": "+33 6 25 85 28 34",
+    "profileImage": "/profile.jpg",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/anthony-becarne",
+      "github": "https://github.com/Abecarne"
+    }
+  },
+  "categories": [
+    {
+      "id": "all",
+      "name": "Tous les projets",
+      "description": "Afficher tous les projets"
+    },
+    {
+      "id": "game-development",
+      "name": "Jeux Vidéo",
+      "description": "Projets de développement de jeux sur Unity, Unreal Engine et des game engines personnalisés"
+    },
+    {
+      "id": "web-development",
+      "name": "Développement Web",
+      "description": "Applications web full-stack et sites web"
+    },
+    {
+      "id": "ai-development",
+      "name": "Développement IA",
+      "description": "Projets d'intelligence artificielle et de machine learning"
+    }
+  ],
+  "work": [
+    {
+      "id": 1,
+      "title": "Rainbow Rumble",
+      "category": "game-development",
+      "client": "Projet universitaire",
+      "description": "Jeu FPS 3D réalisé avec Unity. Le jeu comporte 3 armes différentes, 3 types d'ennemis et un boss. Le joueur affronte des vagues d'ennemis pour gagner des points et améliorer ses armes.",
+      "technologies": ["Unity", "C#", "Blender", "Git"],
+      "duration": "2 mois",
+      "year": "2024",
+      "image": "/assets/works/rainbow_rumble_preview.png",
+      "video": "https://www.youtube.com/embed?v=780mI3jOHPc",
+      "hasVideo": true,
+      "demoUrl": "https://www.youtube.com/watch?v=780mI3jOHPc&ab_channel=Soryoz",
+      "githubUrl": "https://github.com/Saymon24/RainbowRumble"
+    },
+    {
+      "id": 2,
+      "title": "Portfolio Anthony Becarne",
+      "category": "web-development",
+      "client": "Projet personnel",
+      "description": "Un site portfolio personnel présentant mes projets et mes compétences.",
+      "technologies": [
+        "React.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Git"
+      ],
+      "duration": "1 semaine",
+      "year": "2025",
+      "image": "/assets/works/portfolio.png",
+      "video": "",
+      "hasVideo": false,
+      "demoUrl": "https://anthony-becarne.vercel.app/",
+      "githubUrl": "https://github.com/Abecarne/Portfolio_Anthony_Becarne"
+    },
+    {
+      "id": 3,
+      "title": "3D Asset Viewer",
+      "category": "web-development",
+      "client": "Projet personnel",
+      "description": "Une application de visualisation d'assets 3D. L'application permet aux utilisateurs d'importer et de visualiser des modèles 3D dans différents formats. Elle est développée avec React.js et Three.js.",
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Three.js"
+      ],
+      "duration": "1 semaine",
+      "year": "2025",
+      "image": "/assets/works/3d_asset_viewer.png",
+      "video": "",
+      "hasVideo": false,
+      "demoUrl": "https://3d-asset-viewer.vercel.app/",
+      "githubUrl": ""
+    },
+    {
+      "id": 4,
+      "title": "Sense | Chapitre 1",
+      "category": "game-development",
+      "client": "Projet de studio indépendant",
+      "description": "Sense est un RPG 3D innovant développé sous Unreal Engine 5. Le gameplay repose sur l'utilisation des sens humains. Le premier chapitre est un prototype démontrant les mécaniques liées à la vision. Dans une équipe de 7, j'étais Directeur Artistique, Level Designer, Artiste 3D et Game Designer.",
+      "technologies": ["Unreal Engine 5", "C++", "Blender 3D", "Perforce"],
+      "duration": "2 ans",
+      "year": "2023",
+      "image": "/assets/works/sense_preview.png",
+      "video": "https://www.youtube.com/embed/O5ToL-oFs4Y",
+      "hasVideo": true,
+      "demoUrl": "",
+      "githubUrl": ""
+    },
+    {
+      "id": 5,
+      "title": "Gomoku AI",
+      "category": "ai-development",
+      "client": "Projet universitaire",
+      "description": "Gomoku AI est un projet qui implémente une IA pour le jeu classique Gomoku (Cinq-en-ligne). L'IA utilise MinMax pour prédire et contrer les mouvements du joueur.",
+      "technologies": ["C++", "Bash", "Git"],
+      "duration": "1 mois",
+      "year": "2024",
+      "image": "/assets/works/gomokuAI.jpg",
+      "video": "",
+      "hasVideo": false,
+      "demoUrl": "",
+      "githubUrl": "https://github.com/Abecarne/GomokuAI"
+    },
+    {
+      "id": 6,
+      "title": "R-Type",
+      "category": "game-development",
+      "client": "Projet universitaire",
+      "description": "Clone multijoueur de R-Type réalisé en C++ avec un moteur de jeu personnalisé et SFML. Le jeu comporte plusieurs niveaux, des ennemis avec leur IA, ainsi qu'un boss. Jusqu'à 4 joueurs peuvent jouer en réseau local.",
+      "technologies": ["C++", "Boost", "SFML", "CMake", "Git"],
+      "duration": "4 mois",
+      "year": "2023",
+      "image": "/assets/works/rtype_preview.png",
+      "video": "https://www.youtube.com/embed/bC9gDVmy5RU",
+      "hasVideo": true,
+      "demoUrl": "",
+      "githubUrl": "https://github.com/Abecarne/R-Type"
+    },
+    {
+      "id": 7,
+      "title": "Portfolio Legacy Anthony Becarne",
+      "category": "web-development",
+      "client": "Projet personnel",
+      "description": "Ancienne version de mon site portfolio présentant mes projets et compétences.",
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Git"
+      ],
+      "duration": "1 semaine",
+      "year": "2024",
+      "image": "/assets/works/portfolio-old.png",
+      "video": "",
+      "hasVideo": false,
+      "demoUrl": "https://anthony-becarne.vercel.app/",
+      "githubUrl": "https://github.com/Abecarne/Portfolio_Anthony_Becarne"
+    },
+    {
+      "id": 8,
+      "title": "AREA",
+      "category": "web-development",
+      "client": "Projet universitaire",
+      "description": "Application web et mobile fullstack similaire à IFTTT / Zapier utilisant des APIs comme Youtube, Gmail, Discord, Twitter et GitHub. Les utilisateurs peuvent créer un compte, connecter leurs services et créer des applets.",
+      "technologies": [
+        "React.js",
+        "Node.js",
+        "Javascript",
+        "MySQL",
+        "Express",
+        "Scss"
+      ],
+      "duration": "3 mois",
+      "year": "2023",
+      "image": "/assets/works/area_preview.png",
+      "video": "",
+      "hasVideo": false,
+      "demoUrl": "",
+      "githubUrl": ""
+    },
+    {
+      "id": 9,
+      "title": "Bot de Trading",
+      "category": "ai-development",
+      "client": "Projet universitaire",
+      "description": "Bot de trading utilisant une IA décisionnelle pour prédire le cours des cryptomonnaies et actions, et effectuer des trades.",
+      "technologies": ["Python", "Pandas", "NumPy"],
+      "duration": "2 mois",
+      "year": "2023",
+      "image": "/assets/works/trade.jpg",
+      "video": "",
+      "hasVideo": false,
+      "demoUrl": "",
+      "githubUrl": "https://github.com/Abecarne/TradeBot"
+    },
+    {
+      "id": 10,
+      "title": "Indie Studio",
+      "category": "game-development",
+      "client": "Projet universitaire",
+      "description": "Création d'un jeu Bomberman 3D multijoueur avec un moteur personnalisé. Le jeu comporte plusieurs scènes, des ennemis avec IA, et supporte 4 joueurs en réseau local.",
+      "technologies": ["C++", "Raylib", "Boost", "Cmake", "Git"],
+      "duration": "2 mois",
+      "year": "2022",
+      "image": "/assets/works/indie_gif.gif",
+      "video": "",
+      "hasVideo": false,
+      "demoUrl": "",
+      "githubUrl": "https://github.com/Abecarne/IndieStudio"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "Epitech",
+      "degree": "Master en Ingénierie Informatique",
+      "field": "Software Engineering, Data Science, Développement de Jeux Vidéo",
+      "year": "2020 - 2025",
+      "description": "Programme Grande École en ingénierie informatique couvrant le développement logiciel, la data science et le développement de jeux vidéo. Accent mis sur la pratique et les projets concrets.",
+      "image": "/assets/epitech_logo.png",
+      "achievements": [
+        "Spécialisation en Software Engineering et Data Science",
+        "Spécialisation en Développement de Jeux Vidéo",
+        "Méthodologie basée sur des projets concrets"
+      ]
+    },
+    {
+      "id": 2,
+      "institution": "계명대학교 | Keimyung University",
+      "degree": "Bachelor en Game Software Engineering",
+      "field": "Développement de Jeux Vidéo, Graphismes 3D, Modélisation & Animation 3D",
+      "year": "2023 - 2024",
+      "description": "Programme d'échange international en Corée du Sud axé sur le développement de jeux et la modélisation & animation 3D.",
+      "image": "/assets/keimyung_logo.png",
+      "achievements": [
+        "Spécialisation en Développement de Jeux",
+        "Graphismes 3D et Modélisation",
+        "Expérience internationale en Corée du Sud"
+      ]
+    },
+    {
+      "id": 3,
+      "institution": "Université de Lille",
+      "degree": "Licence 1 en Sciences de l'Ingénieur",
+      "field": "Mathématiques, Physique, Informatique",
+      "year": "2019 - 2020",
+      "description": "Année de fondation en sciences de l'ingénieur couvrant les bases en mathématiques, physique et informatique.",
+      "image": "/assets/lille_logo.jpeg",
+      "achievements": [
+        "Bases solides en Mathématiques et Physique",
+        "Fondamentaux en Informatique",
+        "Méthodologie d'ingénierie"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "position": "Développeur Frontend",
+      "company": "SOLTEO",
+      "image": "/assets/solteo_logo.jpeg",
+      "type": "Freelance",
+      "duration": "Août 2025 - Présent",
+      "location": "Remote",
+      "description": "Solteo est une plateforme SaaS de gestion de projets photovoltaïques couvrant toutes les étapes : études de faisabilité, devis, planning, visites techniques et suivi de projet.",
+      "responsibilities": [
+        "Développement frontend sur l'ensemble de la plateforme (React.js / Next.js).",
+        "Internationalisation complète du site et de l'application en 6 langues (i18n, gestion des traductions, adaptation de l'UI selon la locale).",
+        "Développement de nouvelles fonctionnalités pour la création et gestion de projets solaires et visites techniques.",
+        "Travail UI/UX : optimisation des écrans existants, amélioration des parcours, cohérence visuelle et ergonomie.",
+        "Ajout et amélioration des fonctionnalités dédiées aux visites techniques (flux mobile/web, formulaires, capture de données terrain, gestion des données).",
+        "Collaboration étroite avec l'équipe produit pour affiner les besoins métier et livrer des solutions adaptées aux installateurs photovoltaïques."
+      ],
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "API",
+        "i18n",
+        "TailwindCSS",
+        "Git"
+      ],
+      "achievements": [
+        "Internationalisation réussie en 6 langues",
+        "Amélioration notable de l'UX",
+        "Livraison de fonctionnalités clés pour la gestion des projets solaires"
+      ]
+    },
+    {
+      "id": 3,
+      "position": "Développeur Fullstack",
+      "company": "Tellers.ai",
+      "image": "/assets/tellers_logo.jpeg",
+      "type": "Freelance",
+      "duration": "Sept - Oct 2025",
+      "location": "Remote",
+      "description": "Tellers.ai est une plateforme d'édition vidéo automatisée utilisant l'IA pour générer et modifier des vidéos à partir de scripts, d'audio ou de rushs.",
+      "responsibilities": [
+        "Développement d'interfaces et fonctionnalités Flutter pour améliorer l'expérience utilisateur.",
+        "Correction de bugs, optimisation du flux d'édition et amélioration de la stabilité globale.",
+        "Refonte partielle UI/UX pour une navigation plus fluide.",
+        "Développement de nouvelles fonctionnalités modifiant le comportement de la timeline d'édition vidéo.",
+        "Collaboration directe avec l'équipe produit pour livrer des itérations rapides et testables."
+      ],
+      "technologies": ["Flutter", "Dart", "Rust", "Git", "SQL"],
+      "achievements": [
+        "Amélioration de la stabilité et des performances",
+        "UX renforcée grâce à une refonte ciblée",
+        "Livraison de fonctionnalités clés pour la timeline vidéo"
+      ]
+    },
+    {
+      "id": 4,
+      "position": "Développeur IA & Fullstack",
+      "company": "Verdia",
+      "image": "/assets/verdia_logo.jpeg",
+      "type": "Freelance",
+      "duration": "Juin - Août 2025",
+      "location": "Remote",
+      "description": "Développement full-stack d'une plateforme de conception de massifs paysagers durables. Création d'un PoC complet pour présenter le concept à un incubateur.",
+      "responsibilities": [
+        "Développement full-stack avec React.js et Next.js.",
+        "Conception et intégration base de données via Airtable.",
+        "Développement d'APIs custom et intégration de fonctionnalités IA via OpenAI.",
+        "Accompagnement du client de l'idée au prototype fonctionnel."
+      ],
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Airtable",
+        "OpenAI",
+        "Git"
+      ],
+      "achievements": [
+        "PoC fonctionnel livré pour pitch incubateur",
+        "Intégration IA réussie",
+        "Accompagnement complet jusqu'au prototype"
+      ]
+    },
+    {
+      "id": 2,
+      "position": "Ingénieur Fondateur & Développeur Fullstack",
+      "company": "Achille.AI",
+      "image": "/assets/achille_logo.webp",
+      "type": "CDI",
+      "duration": "Sept - Nov 2025",
+      "location": "Station F @ Paris, France",
+      "description": "Développement fullstack d'une solution aidant les équipes support e-commerce à automatiser les réponses clients et certaines actions via IA.",
+      "responsibilities": [
+        "Tech Lead & développement fullstack (Python, PostgreSQL, Vue.js).",
+        "Intégration de modèles de langage dans les workflows.",
+        "Connexion aux plateformes de ticketing (Zendesk, Gorgias, Freshdesk) et APIs e-commerce (Shopify, PrestaShop, Salesforce).",
+        "Mise en place d'un dashboard de suivi des tickets.",
+        "Organisation des sprints et coordination d'équipe."
+      ],
+      "technologies": [
+        "Python",
+        "PostgreSQL",
+        "Vue.js",
+        "OpenAI",
+        "LLM",
+        "FastAPI",
+        "Zendesk",
+        "Gorgias",
+        "Shopify",
+        "PrestaShop"
+      ],
+      "achievements": [
+        "Développement d'une solution IA innovante",
+        "Intégration multi-plates-formes réussie",
+        "Mise en place d'un dashboard de monitoring"
+      ]
+    },
+    {
+      "id": 5,
+      "position": "Encadrant Pédagogique",
+      "company": "Epitech",
+      "image": "/assets/epitech_logo.png",
+      "type": "CDD",
+      "duration": "Mars - Août 2025",
+      "location": "France",
+      "description": "Accompagnement des étudiants dans leurs apprentissages et projets. Organisation d'ateliers et d'événements pour enrichir l'expérience pédagogique.",
+      "responsibilities": [
+        "Support technique et accompagnement étudiants",
+        "Organisation d'ateliers pédagogiques",
+        "Enseignement du développement web, logiciel et jeux vidéo",
+        "Mentorat sur projets techniques"
+      ],
+      "technologies": [
+        "Développement Web",
+        "Software Engineering",
+        "Game Development",
+        "Enseignement"
+      ],
+      "achievements": [
+        "Encadrement de plusieurs promotions",
+        "Organisation d'ateliers techniques",
+        "Amélioration de l'expérience d'apprentissage"
+      ]
+    },
+    {
+      "id": 6,
+      "position": "Développeur E-commerce",
+      "company": "Verdia",
+      "image": "/assets/verdia_logo.jpeg",
+      "type": "Stage",
+      "duration": "Jan 2025",
+      "location": "France",
+      "description": "Mise à jour et maintenance du site e-commerce de l'entreprise. Développement de nouvelles fonctionnalités et optimisation de l'UX. Travail sur un projet Odoo pour un client national.",
+      "responsibilities": [
+        "Mise à jour et maintenance du site e-commerce",
+        "Développement de nouvelles fonctionnalités",
+        "Travail sur la plateforme Odoo",
+        "Optimisation des performances et de l'interface"
+      ],
+      "technologies": [
+        "Odoo",
+        "E-commerce",
+        "Web Development",
+        "Python",
+        "JavaScript"
+      ],
+      "achievements": [
+        "Mise à jour réussie de la plateforme e-commerce",
+        "Amélioration de l'expérience utilisateur",
+        "Livraison dans les délais"
+      ]
+    },
+    {
+      "id": 7,
+      "position": "Ingénieur Logiciel R&D",
+      "company": "EXOTEC",
+      "image": "/assets/exotec_logo.png",
+      "type": "Stage",
+      "duration": "Avr - Juil 2023",
+      "location": "France",
+      "description": "Génération procédurale de modèles 3D pour l'entraînement de modèles de vision par ordinateur. Développement Python, API Blender et OpenCV pour la génération de textures.",
+      "responsibilities": [
+        "Développement de systèmes procéduraux de modèles 3D",
+        "Création de datasets pour modèles de Machine Learning",
+        "Utilisation de l'API Blender pour les assets 3D",
+        "Implémentation OpenCV pour les textures"
+      ],
+      "technologies": [
+        "Python",
+        "Blender API",
+        "OpenCV",
+        "Machine Learning",
+        "3D Modeling"
+      ],
+      "achievements": [
+        "Génération réussie de modèles 3D",
+        "Amélioration de la précision des modèles CV",
+        "Algorithmes de génération efficaces"
+      ]
+    },
+    {
+      "id": 8,
+      "position": "Développeur Logiciel",
+      "company": "AQUILAB",
+      "image": "/assets/aquilab_logo.jpeg",
+      "type": "Stage",
+      "duration": "Juil - Déc 2021",
+      "location": "France",
+      "description": "Mise à jour du logiciel de gestion des médicaments de l'entreprise. Développement en C++, Qt et Boost.",
+      "responsibilities": [
+        "Mise à jour et maintenance du logiciel",
+        "Développement de nouvelles fonctionnalités",
+        "Travail avec Qt et Boost",
+        "Fiabilité et performance du logiciel"
+      ],
+      "technologies": ["C++", "Qt", "Boost", "Développement Logiciel"],
+      "achievements": [
+        "Mise à jour du système de gestion critique",
+        "Amélioration des performances",
+        "Stage réalisé avec succès"
+      ]
+    },
+    {
+      "id": 9,
+      "position": "Développeur Frontend",
+      "company": "Open Classrooms",
+      "image": "/assets/openclassrooms_logo.jpg",
+      "type": "Stage",
+      "duration": "Août 2019",
+      "location": "France",
+      "description": "Développement de pages web dynamiques et responsives. Travail en HTML, CSS et JavaScript.",
+      "responsibilities": [
+        "Développement de pages web dynamiques",
+        "Implémentation de technologies modernes",
+        "Création d'interfaces utilisateur",
+        "Apprentissage des bonnes pratiques"
+      ],
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "achievements": [
+        "Stage frontend complété avec succès",
+        "Bases solides en développement web",
+        "Pages responsives livrées pour projets fictifs"
+      ]
+    }
+  ],
+  "skills": {
+    "showcase": ["React.js", "Next.js", "TypeScript", "Python"],
+    "frontend": [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "TailwindCSS",
+      "Sass"
+    ],
+    "backend": ["Node.js", "Python", "SQL", "MongoDB", "Express"],
+    "tools": ["Git", "Linux", "Blender", "Unity", "Unreal Engine"],
+    "soft": [
+      "Gestion de projet",
+      "Communication client",
+      "Leadership",
+      "Résolution de problèmes",
+      "Enseignement",
+      "Mentorat",
+      "Revue de code"
+    ]
+  },
+  "contact": {
+    "availability": "Disponible pour de nouveaux projets",
+    "preferredContact": "email",
+    "timezone": "Heure d'Europe Centrale (CET)",
+    "languages": [
+      "Français (Natif)",
+      "Anglais (Courant)",
+      "Espagnol (Intermédiaire avancé)",
+      "Coréen (Intermédiaire)"
+    ],
+    "services": [
+      "Développement Web Full-Stack",
+      "Développement Frontend et UI/UX",
+      "Développement logiciel",
+      "Consultation Technique"
+    ],
+    "rates": {
+      "daily": "300-400€/jour",
+      "project complet": "À partir de 2 000€",
+      "retainer": "À partir de 3 000€/mois"
+    }
+  },
+  "page": {
+    "carousel": "Ils m'ont fait confiance",
+    "error": "Erreur lors du chargement des données du portfolio.",
+    "nav": {
+      "home": "Accueil",
+      "work": "Projets",
+      "education": "Formation",
+      "experience": "Expérience",
+      "contact": "Contact"
+    },
+    "work": {
+      "title": "Mes Projets",
+      "description": "Voici quelques-uns des projets sur lesquels j'ai travaillé, illustrant mon expérience en développement fullstack web.",
+      "descriptionTitle": "Description",
+      "technologies": "Technologies utilisées",
+      "details": "Détails du projet",
+      "duration": "Durée",
+      "year": "Année",
+      "demo": "Voir la démo",
+      "code": "Voir le code",
+      "noProjects": "Aucun projet trouvé pour cette catégorie.",
+      "showing": "Affichage de {{count}} sur {{total}} projets"
+    },
+    "experience": {
+      "title": "Expérience Professionnelle",
+      "description": "Mon parcours au sein de différentes entreprises et rôles, construisant mon expertise en développement fullstack et en livraison de solutions à fort impact.",
+      "responsibilities": "Responsabilités",
+      "technologies": "Technologies utilisées",
+      "achievements": "Réalisations clés",
+      "seeDetails": "+ Voir les détails",
+      "hideDetails": "- Masquer les détails"
+    },
+    "education": {
+      "title": "Formation",
+      "description": "Mon parcours académique en informatique et développement logiciel, qui a posé les bases de ma carrière dans la tech.",
+      "achievements": "Réalisations clés"
+    },
+    "contact": {
+      "title": "Entrons en Contact",
+      "description": "Prêt à lancer votre prochain projet ? Discutons de la façon dont je peux vous aider à donner vie à vos idées grâce aux technologies web modernes.",
+      "infos": {
+        "title": "Informations de contact",
+        "email": "Email",
+        "phone": "Téléphone",
+        "location": "Localisation",
+        "timezone": "Fuseau horaire",
+        "connect": "Retrouvez-moi sur"
+      },
+      "availability": {
+        "title": "Disponibilité",
+        "description": "Je suis actuellement disponible pour de nouveaux projets."
+      },
+      "services": {
+        "title": "Services proposés"
+      },
+      "pricing": {
+        "title": "Tarifs",
+        "daily": "Taux journalier",
+        "project": "Tarif par projet",
+        "retainer": "Forfait mensuel"
+      },
+      "languages": {
+        "title": "Langues"
+      }
+    },
+    "cta": {
+      "title": "Prêt à lancer votre projet ?",
+      "description": "Que vous ayez besoin d'une application web complète, de développement d'API ou de conseil technique, je peux vous aider à concrétiser votre vision.",
+      "book": "Réserver un appel",
+      "email": "Envoyer un email",
+      "call": "Appeler maintenant",
+      "viewWork": "Voir mes projets",
+      "downloadCV": "Télécharger mon CV"
+    }
+  }
+}

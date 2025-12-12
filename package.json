@@ -18,14 +18,16 @@
     "eslint": "^9",
     "eslint-plugin-react-hooks": "^5",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "globals": "^15",
     "tailwindcss": "^4",
     "typescript": "^5",
     "typescript-eslint": "^8",
-    "vite": "^6",
-    "globals": "^15"
+    "vite": "^6"
   },
   "dependencies": {
+    "i18next": "^25.7.2",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-i18next": "^16.5.0"
   }
 }

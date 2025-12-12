@@ -1,6 +1,7 @@
 import { sidebarState } from "@/lib/sidebarState";
-import { WorkProject } from "@/hooks/usePortfolioData";
 import { useEffect, useState, type MouseEvent } from "react";
+import { useTranslation } from "react-i18next";
+import type { WorkProject } from "../types";
 
 interface WorkGridProps {
   projects: WorkProject[];
@@ -13,10 +14,11 @@ interface ProjectModalProps {
 }
 
 function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (!isOpen) return;
 
-    // Prevent body scroll when modal is open
     document.body.style.overflow = "hidden";
 
     const handleEscape = (e: KeyboardEvent) => {
@@ -90,7 +92,7 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
           {/* Description */}
           <div className="mb-6">
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              Description
+              {t("page.work.descriptionTitle")}
             </h3>
             <p className="text-gray-700 leading-relaxed">
               {project.description}
@@ -101,7 +103,7 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Technologies
+                {t("page.work.technologies")}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
@@ -116,15 +118,18 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Project Details
+                {t("page.work.details")}
               </h3>
               <div className="space-y-2">
                 <p>
-                  <span className="font-medium">Duration:</span>{" "}
+                  <span className="font-medium">
+                    {t("page.work.duration")} :
+                  </span>{" "}
                   {project.duration}
                 </p>
                 <p>
-                  <span className="font-medium">Year:</span> {project.year}
+                  <span className="font-medium">{t("page.work.year")} :</span>{" "}
+                  {project.year}
                 </p>
               </div>
             </div>
@@ -139,7 +144,7 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
               >
-                View Demo
+                {t("page.work.demo")}
               </a>
             )}
             {project.githubUrl && (
@@ -149,7 +154,7 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
               >
-                View Code
+                {t("page.work.code")}
               </a>
             )}
           </div>
@@ -163,6 +168,7 @@ export default function WorkGrid({ projects }: WorkGridProps) {
   const [selectedProject, setSelectedProject] = useState<WorkProject | null>(
     null
   );
+  const { t } = useTranslation();
 
   const handleProjectClick = (project: WorkProject) => {
     setSelectedProject(project);
@@ -174,21 +180,10 @@ export default function WorkGrid({ projects }: WorkGridProps) {
     sidebarState.show();
   };
 
-  // Function to extract YouTube video ID from embed URL
-  const getYouTubeThumbnail = (videoUrl: string) => {
-    const videoId = videoUrl.match(/embed\/([^?]+)/)?.[1];
-    if (videoId) {
-      return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-    }
-    return null;
-  };
-
   if (projects.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-500 text-lg">
-          No projects found for this category.
-        </p>
+        <p className="text-gray-500 text-lg">{t("page.work.noProjects")}</p>
       </div>
     );
   }
@@ -199,7 +194,7 @@ export default function WorkGrid({ projects }: WorkGridProps) {
         {projects.map((project) => {
           const isVideoProject = project.hasVideo && Boolean(project.video);
           const mediaSrc = isVideoProject
-            ? getYouTubeThumbnail(project.video as string) || project.image
+            ? (project.video as string) || project.image
             : project.image;
 
           return (

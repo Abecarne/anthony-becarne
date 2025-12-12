@@ -1,4 +1,4 @@
-import { Category } from "@/hooks/usePortfolioData";
+import type { Category } from "@/types";
 
 interface CategorySelectorProps {
   categories: Category[];
