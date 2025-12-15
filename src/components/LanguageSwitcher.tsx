@@ -1,94 +1,18 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-
-type FlagProps = {
-  className?: string;
-};
-
-const FlagFrance = ({ className }: FlagProps) => (
-  <svg
-    viewBox="0 0 60 40"
-    className={className ?? ""}
-    aria-hidden="true"
-    focusable="false"
-    role="img"
-  >
-    <rect width="60" height="40" fill="#ED2939" />
-    <rect width="40" height="40" fill="#fff" />
-    <rect width="20" height="40" fill="#002395" />
-  </svg>
-);
-
-const FlagUK = ({ className }: FlagProps) => (
-  <svg
-    viewBox="0 0 60 40"
-    className={className ?? ""}
-    aria-hidden="true"
-    focusable="false"
-    role="img"
-  >
-    <rect width="60" height="40" fill="#012169" />
-    <path d="M0 0 L60 40" stroke="#fff" strokeWidth="8" />
-    <path d="M60 0 L0 40" stroke="#fff" strokeWidth="8" />
-    <path d="M0 0 L60 40" stroke="#C8102E" strokeWidth="4" />
-    <path d="M60 0 L0 40" stroke="#C8102E" strokeWidth="4" />
-    <rect x="24" width="12" height="40" fill="#fff" />
-    <rect y="14" width="60" height="12" fill="#fff" />
-    <rect x="27" width="6" height="40" fill="#C8102E" />
-    <rect y="17" width="60" height="6" fill="#C8102E" />
-  </svg>
-);
-
-const FlagKorea = ({ className }: FlagProps) => (
-  <svg
-    viewBox="0 0 60 40"
-    className={className ?? ""}
-    aria-hidden="true"
-    focusable="false"
-    role="img"
-  >
-    <rect width="60" height="40" fill="#fff" />
-    <circle cx="30" cy="20" r="11" fill="#CD2E3A" />
-    <path
-      d="M30 9a11 11 0 0 1 0 22 5.5 5.5 0 0 0 0-11 5.5 5.5 0 0 1 0-11"
-      fill="#0047A0"
-    />
-    <path
-      d="M30 31a11 11 0 0 1 0-22 5.5 5.5 0 0 0 0 11 5.5 5.5 0 0 1 0 11"
-      fill="#0047A0"
-    />
-    <g stroke="#000" strokeWidth="2" strokeLinecap="round">
-      <line x1="11" y1="10" x2="21" y2="10" />
-      <line x1="11" y1="14" x2="21" y2="14" />
-      <line x1="11" y1="18" x2="21" y2="18" />
-      <line x1="39" y1="10" x2="44" y2="10" />
-      <line x1="46" y1="10" x2="51" y2="10" />
-      <line x1="39" y1="14" x2="51" y2="14" />
-      <line x1="39" y1="18" x2="44" y2="18" />
-      <line x1="46" y1="18" x2="51" y2="18" />
-      <line x1="11" y1="22" x2="21" y2="22" />
-      <line x1="11" y1="26" x2="16" y2="26" />
-      <line x1="17" y1="26" x2="21" y2="26" />
-      <line x1="11" y1="30" x2="21" y2="30" />
-      <line x1="39" y1="22" x2="44" y2="22" />
-      <line x1="46" y1="22" x2="51" y2="22" />
-      <line x1="39" y1="26" x2="44" y2="26" />
-      <line x1="46" y1="26" x2="51" y2="26" />
-      <line x1="39" y1="30" x2="44" y2="30" />
-      <line x1="46" y1="30" x2="51" y2="30" />
-    </g>
-  </svg>
-);
+import FlagFR from "./Icons/FlagFR";
+import FlagKR from "./Icons/FlagKR";
+import FlagUK from "./Icons/FlagUK";
 
 const languages = [
   {
     code: "fr",
     label: "Français",
     abbr: "FR",
-    Flag: FlagFrance,
+    Flag: FlagFR,
   },
   { code: "en", label: "English", abbr: "EN", Flag: FlagUK },
-  { code: "ko", label: "한국어", abbr: "KO", Flag: FlagKorea },
+  { code: "ko", label: "한국어", abbr: "KO", Flag: FlagKR },
 ];
 
 const iconClasses = "w-6 h-4 rounded-[2px] shadow-sm";
