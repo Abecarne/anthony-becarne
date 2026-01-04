@@ -7,7 +7,6 @@ import { useTranslation } from "react-i18next";
 
 import { HeroSection } from "@/components/HeroSection";
 import { Navbar } from "@/components/Navbar";
-import { ContactForm } from "@/components/ContactForm";
 
 function HomePage() {
   const {
