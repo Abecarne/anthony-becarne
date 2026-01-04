@@ -10,7 +10,6 @@ export interface PersonalInfo {
   socialLinks: {
     linkedin: string;
     github: string;
-    twitter: string;
   };
 }
 
@@ -30,6 +29,7 @@ export interface WorkProject {
   duration: string;
   year: string;
   image: string;
+  images?: string[];
   video: string;
   hasVideo: boolean;
   demoUrl: string;
@@ -44,7 +44,7 @@ interface Education {
   year: string;
   description: string;
   image: string;
-  achievements: string[];
+  achievements?: string[];
 }
 
 interface Experience {
@@ -58,7 +58,7 @@ interface Experience {
   description: string;
   responsibilities: string[];
   technologies: string[];
-  achievements: string[];
+  achievements?: string[];
 }
 
 interface Skills {

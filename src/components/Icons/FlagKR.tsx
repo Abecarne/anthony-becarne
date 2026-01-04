@@ -11,7 +11,7 @@ export default function FlagKR({ className }: IconProps) {
       className={cn("stroke-current stroke-2", className)}
     >
       <path fill="#fff" d="M-72-48v96H72v-96z" />
-      <g stroke="#000" stroke-width="4">
+      <g stroke="#000" strokeWidth="4">
         <path
           transform="rotate(33.69006752598)"
           d="M-50-12v24m6 0v-24m6 0v24m76 0V1m0-2v-11m6 0v11m0 2v11m6 0V1m0-2v-11"

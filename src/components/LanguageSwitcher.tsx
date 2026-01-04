@@ -47,6 +47,7 @@ const LanguageSwitcher = () => {
   const [activeLang, setActiveLang] = useState(
     normalizeLanguageCode(i18n.language ?? "en")
   );
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const cookieLang = getLanguageFromCookie();
@@ -74,34 +75,71 @@ const LanguageSwitcher = () => {
     };
   }, [i18n]);
 
-  return (
-    <div className="flex items-center gap-1 rounded-full border border-gray-200 bg-white/90 px-2 py-1 shadow-sm">
-      {languages.map((lang) => {
-        const Flag = lang.Flag;
-        const isActive = lang.code === activeLang;
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest(".language-switcher")) {
+        setIsOpen(false);
+      }
+    };
 
-        return (
-          <button
-            key={lang.code}
-            type="button"
-            onClick={() => {
-              if (lang.code !== activeLang) {
-                i18n.changeLanguage(lang.code);
-              }
-            }}
-            className={`flex items-center gap-1 rounded-full px-2 py-1 text-[10px] font-semibold uppercase tracking-wide transition-colors ${
-              isActive
-                ? "bg-blue-600 text-white shadow"
-                : "text-gray-600 hover:bg-gray-100"
-            }`}
-            aria-pressed={isActive}
-            aria-label={`Switch to ${lang.label}`}
-          >
-            <Flag className={iconClasses} />
-            <span>{lang.abbr}</span>
-          </button>
-        );
-      })}
+    if (isOpen) {
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, [isOpen]);
+
+  const activeLanguage = languages.find((lang) => lang.code === activeLang);
+  const otherLanguages = languages.filter((lang) => lang.code !== activeLang);
+
+  if (!activeLanguage) return null;
+
+  const ActiveFlag = activeLanguage.Flag;
+
+  return (
+    <div className="language-switcher relative">
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-1 rounded-full border border-gray-200 bg-white/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide shadow-sm transition-colors hover:bg-gray-50"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+        aria-label={`Current language: ${activeLanguage.label}. Click to change.`}
+      >
+        <ActiveFlag className={iconClasses} />
+        <span className="text-gray-700">{activeLanguage.abbr}</span>
+        <svg
+          className={`h-3 w-3 text-gray-500 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {isOpen && (
+        <div className="absolute right-0 top-full mt-1 flex flex-col gap-1 rounded-lg border border-gray-200 bg-white p-1 shadow-lg">
+          {otherLanguages.map((lang) => {
+            const Flag = lang.Flag;
+            return (
+              <button
+                key={lang.code}
+                type="button"
+                onClick={() => {
+                  i18n.changeLanguage(lang.code);
+                  setIsOpen(false);
+                }}
+                className="flex items-center gap-2 rounded-md px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-gray-600 transition-colors hover:bg-gray-100"
+                aria-label={`Switch to ${lang.label}`}
+              >
+                <Flag className={iconClasses} />
+                <span>{lang.abbr}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

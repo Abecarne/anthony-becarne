@@ -42,7 +42,6 @@ export const HeroSection = ({ data }: { data: PortfolioData }) => {
               <a
                 href="https://calendly.com/anthony-becarne/30min"
                 target="_blank"
-                rel="noopener noreferrer"
                 className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold text-base transition-all shadow-lg uppercase tracking-wide"
               >
                 {t("page.cta.book")}

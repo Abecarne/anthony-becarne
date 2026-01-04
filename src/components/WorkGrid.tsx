@@ -1,5 +1,5 @@
 import { sidebarState } from "@/lib/sidebarState";
-import { useEffect, useState, type MouseEvent } from "react";
+import { useCallback, useEffect, useState, type MouseEvent } from "react";
 import { useTranslation } from "react-i18next";
 import type { WorkProject } from "../types";
 
@@ -15,15 +15,41 @@ interface ProjectModalProps {
 
 function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const { t } = useTranslation();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Combine main image with additional images (only when project exists)
+  const allImages = project ? [project.image, ...(project.images || [])] : [];
+  const hasMultipleImages = allImages.length > 1;
+
+  const goToPreviousImage = useCallback(() => {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? allImages.length - 1 : prev - 1
+    );
+  }, [allImages.length]);
+
+  const goToNextImage = useCallback(() => {
+    setCurrentImageIndex((prev) =>
+      prev === allImages.length - 1 ? 0 : prev + 1
+    );
+  }, [allImages.length]);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen || !project) return;
 
     document.body.style.overflow = "hidden";
+    setCurrentImageIndex(0);
 
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
+      }
+      if (hasMultipleImages) {
+        if (e.key === "ArrowLeft") {
+          goToPreviousImage();
+        }
+        if (e.key === "ArrowRight") {
+          goToNextImage();
+        }
       }
     };
 
@@ -33,7 +59,7 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
       document.body.style.overflow = "unset";
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, hasMultipleImages, goToPreviousImage, goToNextImage, project]);
 
   if (!isOpen) return null;
 
@@ -78,13 +104,60 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 />
               </div>
             ) : (
-              <div className="relative w-full h-64 md:h-96">
+              <div className="relative w-full flex items-center justify-center bg-gray-100 rounded-lg">
                 <img
-                  src={project.image}
-                  alt={project.title}
-                  className="object-cover rounded-lg w-full h-full"
+                  src={allImages[currentImageIndex]}
+                  alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                  className="object-contain rounded-lg max-h-[60vh] w-auto max-w-full"
                   loading="lazy"
                 />
+                {/* Navigation arrows */}
+                {hasMultipleImages && (
+                  <>
+                    <button
+                      onClick={goToPreviousImage}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
+                      aria-label="Previous image"
+                    >
+                      <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 19l-7-7 7-7"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={goToNextImage}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
+                      aria-label="Next image"
+                    >
+                      <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </button>
+                    {/* Image counter */}
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                      {currentImageIndex + 1} / {allImages.length}
+                    </div>
+                  </>
+                )}
               </div>
             )}
           </div>
@@ -141,7 +214,6 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               <a
                 href={project.demoUrl}
                 target="_blank"
-                rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
               >
                 {t("page.work.demo")}
@@ -151,7 +223,6 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               <a
                 href={project.githubUrl}
                 target="_blank"
-                rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
               >
                 {t("page.work.code")}
