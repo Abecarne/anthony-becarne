@@ -53,6 +53,35 @@
     },
     {
       "id": 2,
+      "title": "Time Tracker",
+      "category": "web-development",
+      "client": "Personal Project",
+      "description": "A time tracking application to help freelancers track their work hours and manage projects effectively. It synchronizes data across web and mobile platforms using Supabase and Google Calendar.",
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "React Native",
+        "Supabase",
+        "Vercel",
+        "Google Cloud API",
+        "Git"
+      ],
+      "duration": "1 week",
+      "year": "2625",
+      "image": "/assets/works/time_tracker_timer.png",
+      "images": [
+        "/assets/works/time_tracker_history.png",
+        "/assets/works/time_tracker_google_calendar.png"
+      ],
+      "video": "",
+      "hasVideo": false,
+      "demoUrl": "https://web-time-tracker.vercel.app/app",
+      "githubUrl": "https://github.com/Abecarne/time-tracker/tree/main"
+    },
+    {
+      "id": 3,
       "title": "Portfolio Anthony Becarne",
       "category": "web-development",
       "client": "Personal Project",
@@ -78,7 +107,7 @@
       "githubUrl": "https://github.com/Abecarne/Portfolio_Anthony_Becarne"
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "3D Asset Viewer",
       "category": "web-development",
       "client": "Personal Project",
@@ -103,7 +132,7 @@
       "githubUrl": ""
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Sense | Chapter 1",
       "category": "game-development",
       "client": "Indie Studio Project",
@@ -119,7 +148,7 @@
       "githubUrl": ""
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Gomoku AI",
       "category": "ai-development",
       "client": "University Project",
@@ -135,7 +164,7 @@
       "githubUrl": "https://github.com/Abecarne/GomokuAI"
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "R-Type",
       "category": "game-development",
       "client": "University Project",
@@ -155,7 +184,7 @@
       "githubUrl": "https://github.com/Abecarne/R-Type"
     },
     {
-      "id": 7,
+      "id": 8,
       "title": "Legacy Portfolio Anthony Becarne",
       "category": "web-development",
       "client": "Personal Project",
@@ -177,7 +206,7 @@
       "githubUrl": "https://github.com/Abecarne/Portfolio_Anthony_Becarne"
     },
     {
-      "id": 8,
+      "id": 9,
       "title": "AREA",
       "category": "web-development",
       "client": "University Project",
@@ -200,7 +229,7 @@
       "githubUrl": ""
     },
     {
-      "id": 9,
+      "id": 10,
       "title": "Trading Bot",
       "category": "ai-development",
       "client": "University Project",
@@ -216,7 +245,7 @@
       "githubUrl": "https://github.com/Abecarne/TradeBot"
     },
     {
-      "id": 10,
+      "id": 11,
       "title": "Indie Studio",
       "category": "game-development",
       "client": "University Project",
