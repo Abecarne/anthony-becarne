@@ -4,6 +4,7 @@ import ExperienceTypeSelector from "@/components/ExperienceTypeSelector";
 import MeshBackground from "@/components/MeshBackground";
 import WorkGrid from "@/components/WorkGrid";
 import { usePortfolioData } from "@/hooks/usePortfolioData";
+import { useScrollRevealAll } from "@/hooks/useScrollReveal";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -29,6 +30,10 @@ function HomePage() {
   const [activeSection, setActiveSection] = useState("home");
   const [showNavbar, setShowNavbar] = useState(false);
   const { t } = useTranslation();
+
+  useScrollRevealAll(".scroll-reveal");
+  useScrollRevealAll(".scroll-reveal-left");
+  useScrollRevealAll(".scroll-reveal-scale");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,7 +98,7 @@ function HomePage() {
       {/* Work Section */}
       <section id="work" className="min-h-screen px-6 py-24 bg-white/30">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 scroll-reveal">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t("page.work.title")}
             </h1>
@@ -132,7 +137,7 @@ function HomePage() {
         className="min-h-screen px-6 py-24 bg-gray-100/80"
       >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 scroll-reveal">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t("page.experience.title")}
             </h1>
@@ -166,7 +171,7 @@ function HomePage() {
       {/* Education Section */}
       <section id="education" className="min-h-screen px-6 py-24 bg-white/30">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 scroll-reveal">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t("page.education.title")}
             </h1>
@@ -177,7 +182,7 @@ function HomePage() {
 
           <div className="space-y-12">
             {data.education.map((edu, index) => (
-              <div key={edu.id} className="relative">
+              <div key={edu.id} className="relative scroll-reveal-left" style={{ animationDelay: `${index * 0.15}s` }}>
                 {index !== data.education.length - 1 && (
                   <div className="absolute left-8 top-20 w-px h-32 bg-gray-300 hidden md:block"></div>
                 )}
@@ -264,7 +269,7 @@ function HomePage() {
         className="min-h-screen px-6 py-24 bg-gradient-to-br from-blue-50/30 to-purple-50/30"
       >
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 scroll-reveal">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t("page.contact.title")}
             </h1>
@@ -275,7 +280,7 @@ function HomePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div className="space-y-8">
-              <div className="bg-white rounded-xl shadow-lg border p-8">
+              <div className="bg-white rounded-xl shadow-lg border p-8 scroll-reveal-left">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   {t("page.contact.infos.title")}
                 </h2>
@@ -363,7 +368,7 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-lg border p-6">
+              <div className="bg-white rounded-xl shadow-lg border p-6 scroll-reveal-left" style={{ animationDelay: "0.15s" }}>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                   <h3 className="text-lg font-semibold text-gray-900">
@@ -380,7 +385,7 @@ function HomePage() {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-white rounded-xl shadow-lg border p-8">
+              <div className="bg-white rounded-xl shadow-lg border p-8 scroll-reveal-scale">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   {t("page.contact.services.title")}
                 </h2>
@@ -394,7 +399,7 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-lg border p-8">
+              <div className="bg-white rounded-xl shadow-lg border p-8 scroll-reveal-scale" style={{ animationDelay: "0.15s" }}>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   {t("page.contact.pricing.title")}
                 </h2>
@@ -426,7 +431,7 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-lg border p-8">
+              <div className="bg-white rounded-xl shadow-lg border p-8 scroll-reveal-scale" style={{ animationDelay: "0.3s" }}>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   {t("page.contact.languages.title")}
                 </h2>
@@ -442,7 +447,7 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="text-center">
+          <div className="text-center scroll-reveal">
             <div className="bg-blue-50 rounded-xl p-8 border border-blue-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {t("page.cta.title")}

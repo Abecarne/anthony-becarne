@@ -607,6 +607,7 @@
     }
   },
   "page": {
+    "freelanceBadge": "Available for freelance",
     "carousel": "Trusted by industry leaders",
     "error": "Error loading portfolio data.",
     "nav": {
