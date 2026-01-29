@@ -93,8 +93,8 @@
         "TailwindCSS",
         "Git"
       ],
-      "duration": "1주",
-      "year": "2024",
+      "duration": "",
+      "year": "2026",
       "image": "/assets/works/portfolio_home.png",
       "images": [
         "/assets/works/portfolio_experience.png",
@@ -111,7 +111,7 @@
       "title": "3D Asset Viewer",
       "category": "web-development",
       "client": "개인 프로젝트",
-      "description": "3D 에셋 뷰어 애플리케이션입니다. 사용자가 다양한 포맷의 3D 모델을 업로드하고 열람할 수 있습니다. React.js와 Three.js로 구현되었습니다.",
+      "description": "3D 에셋 뷰어 애플리케이션입니다. 사용자가 다양한 포맷의 3D 모델을 업로드하고 열람할 수 있습니다.",
       "technologies": [
         "React.js",
         "Next.js",
@@ -308,6 +308,7 @@
   "experience": [
     {
       "id": 1,
+      "category": "freelance",
       "position": "프론트엔드 개발자",
       "company": "SOLTEO",
       "image": "/assets/solteo_logo.jpeg",
@@ -340,6 +341,7 @@
     },
     {
       "id": 3,
+      "category": "freelance",
       "position": "풀스택 개발자",
       "company": "Tellers.ai",
       "image": "/assets/tellers_logo.jpeg",
@@ -363,6 +365,7 @@
     },
     {
       "id": 4,
+      "category": "freelance",
       "position": "AI 개발자 & 풀스택 개발자",
       "company": "Verdia",
       "image": "/assets/verdia_logo.jpeg",
@@ -392,6 +395,7 @@
     },
     {
       "id": 2,
+      "category": "contract",
       "position": "Founding Engineer & 풀스택 개발자",
       "company": "Achille.AI",
       "image": "/assets/achille_logo.webp",
@@ -426,6 +430,7 @@
     },
     {
       "id": 5,
+      "category": "contract",
       "position": "교육 담당자 (Educational Supervisor)",
       "company": "Epitech",
       "image": "/assets/epitech_logo.png",
@@ -448,6 +453,7 @@
     },
     {
       "id": 6,
+      "category": "internship",
       "position": "이커머스 개발자",
       "company": "Verdia",
       "image": "/assets/verdia_logo.jpeg",
@@ -476,6 +482,7 @@
     },
     {
       "id": 7,
+      "category": "internship",
       "position": "R&D 소프트웨어 엔지니어",
       "company": "EXOTEC",
       "image": "/assets/exotec_logo.png",
@@ -504,6 +511,7 @@
     },
     {
       "id": 8,
+      "category": "internship",
       "position": "소프트웨어 개발자",
       "company": "AQUILAB",
       "image": "/assets/aquilab_logo.jpeg",
@@ -526,6 +534,7 @@
     },
     {
       "id": 9,
+      "category": "internship",
       "position": "프론트엔드 개발자",
       "company": "Open Classrooms",
       "image": "/assets/openclassrooms_logo.jpg",
@@ -618,7 +627,19 @@
       "technologies": "사용 기술",
       "achievements": "핵심 성과",
       "seeDetails": "+ 자세히 보기",
-      "hideDetails": "- 숨기기"
+      "hideDetails": "- 숨기기",
+      "noExperiences": "이 유형에 해당하는 경력이 없습니다.",
+      "showing": "{{total}}개 중 {{count}}개 표시",
+      "types": {
+        "all": "전체",
+        "allDesc": "모든 경력 보기",
+        "freelance": "프리랜서",
+        "freelanceDesc": "프리랜서 프로젝트",
+        "contract": "정규직",
+        "contractDesc": "정규직 및 계약직",
+        "internship": "인턴십",
+        "internshipDesc": "인턴십 경력"
+      }
     },
     "education": {
       "title": "학력",

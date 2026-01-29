@@ -26,7 +26,7 @@
     {
       "id": "web-development",
       "name": "Développement Web",
-      "description": "Applications web full-stack et sites web"
+      "description": "Applications web full-stack et / ou mobile"
     },
     {
       "id": "ai-development",
@@ -40,7 +40,7 @@
       "title": "Rainbow Rumble",
       "category": "game-development",
       "client": "Projet universitaire",
-      "description": "Jeu FPS 3D réalisé avec Unity. Le jeu comporte 3 armes différentes, 3 types d'ennemis et un boss. Le joueur affronte des vagues d'ennemis pour gagner des points et améliorer ses armes.",
+      "description": "Jeu FPS 3D réalisé avec Unity. Le jeu comporte 3 armes différentes, 3 types d'ennemis et un boss. Le joueur affronte des vagues d'ennemis pour gagner des points et améliorer ses armes dans une boutique off-game.",
       "technologies": ["Unity", "C#", "Blender", "Git"],
       "duration": "2 mois",
       "year": "2024",
@@ -87,8 +87,8 @@
       "client": "Projet personnel",
       "description": "Un site portfolio personnel présentant mes projets et mes compétences.",
       "technologies": ["React.js", "TypeScript", "TailwindCSS", "Git"],
-      "duration": "1 semaine",
-      "year": "2025",
+      "duration": "",
+      "year": "2026",
       "image": "/assets/works/portfolio_home.png",
       "images": [
         "/assets/works/portfolio_experience.png",
@@ -105,7 +105,7 @@
       "title": "3D Asset Viewer",
       "category": "web-development",
       "client": "Projet personnel",
-      "description": "Une application de visualisation d'assets 3D. L'application permet aux utilisateurs d'importer et de visualiser des modèles 3D dans différents formats. Elle est développée avec React.js et Three.js.",
+      "description": "Une application de visualisation d'assets 3D. L'application permet aux utilisateurs d'importer et de visualiser des modèles 3D dans différents formats.",
       "technologies": [
         "React.js",
         "Next.js",
@@ -265,7 +265,7 @@
       "description": "Programme Grande École en ingénierie informatique couvrant le développement logiciel, la data science et le développement de jeux vidéo. Accent mis sur la pratique et les projets concrets.",
       "image": "/assets/epitech_logo.png",
       "achievements": [
-        "Spécialisation en Software Engineering et Data Science",
+        "Spécialisation en Software Engineering",
         "Spécialisation en Développement de Jeux Vidéo",
         "Méthodologie basée sur des projets concrets"
       ]
@@ -302,6 +302,7 @@
   "experience": [
     {
       "id": 1,
+      "category": "freelance",
       "position": "Développeur Frontend",
       "company": "SOLTEO",
       "image": "/assets/solteo_logo.jpeg",
@@ -334,6 +335,7 @@
     },
     {
       "id": 3,
+      "category": "freelance",
       "position": "Développeur Fullstack",
       "company": "Tellers.ai",
       "image": "/assets/tellers_logo.jpeg",
@@ -352,6 +354,7 @@
     },
     {
       "id": 4,
+      "category": "freelance",
       "position": "Développeur IA & Fullstack",
       "company": "Verdia",
       "image": "/assets/verdia_logo.jpeg",
@@ -376,6 +379,7 @@
     },
     {
       "id": 2,
+      "category": "contract",
       "position": "Ingénieur Fondateur & Développeur Fullstack",
       "company": "Achille.AI",
       "image": "/assets/achille_logo.webp",
@@ -384,27 +388,25 @@
       "location": "Station F @ Paris, France",
       "description": "Développement fullstack d'une solution aidant les équipes support e-commerce à automatiser les réponses clients et certaines actions via IA.",
       "responsibilities": [
-        "Tech Lead & développement fullstack (Python, PostgreSQL, Vue.js).",
-        "Intégration de modèles de langage dans les workflows.",
+        "Tech Lead & développement fullstack.",
+        "Intégration de LLM dans les workflows.",
         "Connexion aux plateformes de ticketing (Zendesk, Gorgias, Freshdesk) et APIs e-commerce (Shopify, PrestaShop, Salesforce).",
-        "Mise en place d'un dashboard de suivi des tickets.",
+        "Mise en place d'un dashboard de suivi des tickets pour le support client.",
         "Organisation des sprints et coordination d'équipe."
       ],
       "technologies": [
         "Python",
         "PostgreSQL",
         "Vue.js",
-        "OpenAI",
         "LLM",
         "FastAPI",
-        "Zendesk",
         "Gorgias",
-        "Shopify",
-        "PrestaShop"
+        "Shopify"
       ]
     },
     {
       "id": 5,
+      "category": "contract",
       "position": "Encadrant Pédagogique",
       "company": "Epitech",
       "image": "/assets/epitech_logo.png",
@@ -427,6 +429,7 @@
     },
     {
       "id": 6,
+      "category": "internship",
       "position": "Développeur E-commerce",
       "company": "Verdia",
       "image": "/assets/verdia_logo.jpeg",
@@ -450,6 +453,7 @@
     },
     {
       "id": 7,
+      "category": "internship",
       "position": "Ingénieur Logiciel R&D",
       "company": "EXOTEC",
       "image": "/assets/exotec_logo.png",
@@ -473,6 +477,7 @@
     },
     {
       "id": 8,
+      "category": "internship",
       "position": "Développeur Logiciel",
       "company": "AQUILAB",
       "image": "/assets/aquilab_logo.jpeg",
@@ -490,6 +495,7 @@
     },
     {
       "id": 9,
+      "category": "internship",
       "position": "Développeur Frontend",
       "company": "Open Classrooms",
       "image": "/assets/openclassrooms_logo.jpg",
@@ -582,7 +588,19 @@
       "technologies": "Technologies utilisées",
       "achievements": "Réalisations clés",
       "seeDetails": "+ Voir les détails",
-      "hideDetails": "- Masquer les détails"
+      "hideDetails": "- Masquer les détails",
+      "noExperiences": "Aucune expérience trouvée pour ce type.",
+      "showing": "Affichage de {{count}} sur {{total}} expériences",
+      "types": {
+        "all": "Toutes",
+        "allDesc": "Afficher toutes les expériences",
+        "freelance": "Freelance",
+        "freelanceDesc": "Missions en freelance",
+        "contract": "Contrat",
+        "contractDesc": "CDI et CDD",
+        "internship": "Stage",
+        "internshipDesc": "Stages en entreprise"
+      }
     },
     "education": {
       "title": "Formation",

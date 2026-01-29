@@ -49,6 +49,7 @@ interface Education {
 
 interface Experience {
   id: number;
+  category: string;
   position: string;
   company: string;
   image?: string;

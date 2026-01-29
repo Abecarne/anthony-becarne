@@ -1,4 +1,6 @@
 import CategorySelector from "@/components/CategorySelector";
+import ExperienceGrid from "@/components/ExperienceGrid";
+import ExperienceTypeSelector from "@/components/ExperienceTypeSelector";
 import MeshBackground from "@/components/MeshBackground";
 import WorkGrid from "@/components/WorkGrid";
 import { usePortfolioData } from "@/hooks/usePortfolioData";
@@ -17,11 +19,15 @@ function HomePage() {
     setSelectedCategory,
     filteredProjects,
     getCategoryCount,
+    selectedExperienceType,
+    setSelectedExperienceType,
+    filteredExperiences,
+    getExperienceTypeCount,
+    experienceTypes,
   } = usePortfolioData();
 
   const [activeSection, setActiveSection] = useState("home");
   const [showNavbar, setShowNavbar] = useState(false);
-  const [expandedExp, setExpandedExp] = useState<number[] | null>(null);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -125,7 +131,7 @@ function HomePage() {
         id="experience"
         className="min-h-screen px-6 py-24 bg-gray-100/80"
       >
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t("page.experience.title")}
@@ -135,130 +141,24 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-gray-300 hidden md:block"></div>
+          <ExperienceTypeSelector
+            types={experienceTypes}
+            selectedType={selectedExperienceType}
+            onTypeChange={setSelectedExperienceType}
+            getTypeCount={getExperienceTypeCount}
+          />
 
-            <div className="space-y-12">
-              {data.experience.map((exp) => (
-                <div key={exp.id} className="relative">
-                  <div className="absolute left-6 top-8 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-lg hidden md:block"></div>
-                  <div className="bg-white rounded-xl shadow-lg border p-8 md:ml-16">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-3">
-                      <div className="flex items-start gap-4">
-                        {exp.image && (
-                          <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                            <img
-                              src={exp.image}
-                              alt={`${exp.company} logo`}
-                              width={64}
-                              height={64}
-                              className="object-contain max-w-full max-h-full"
-                              loading="lazy"
-                            />
-                          </div>
-                        )}
-                        <div>
-                          <h2 className="text-2xl font-bold text-gray-900 mb-1">
-                            {exp.position}
-                          </h2>
-                          <h3 className="text-xl font-semibold text-blue-600 mb-2">
-                            {exp.company}
-                          </h3>
-                        </div>
-                      </div>
-                      <div className="flex flex-wrap gap-2 items-start justify-end">
-                        <span className="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg text-base font-bold shadow-md whitespace-nowrap">
-                          {exp.duration}
-                        </span>
-                        <span className="px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-lg text-base font-semibold shadow-md whitespace-nowrap">
-                          {exp.type}
-                        </span>
-                        <span className="px-4 py-2 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-lg text-base font-semibold shadow-md whitespace-nowrap">
-                          {exp.location}
-                        </span>
-                      </div>
-                    </div>
-                    <p className="text-gray-700 leading-relaxed mb-2">
-                      {exp.description}
-                    </p>
-                    <button
-                      className="text-blue-600 font-semibold flex items-center gap-1 hover:underline mb-2"
-                      onClick={() =>
-                        setExpandedExp(
-                          expandedExp?.find((id) => id === exp.id)
-                            ? expandedExp.filter((id) => id !== exp.id)
-                            : [...(expandedExp || []), exp.id]
-                        )
-                      }
-                    >
-                      {expandedExp?.find((id) => id === exp.id)
-                        ? t("page.experience.hideDetails")
-                        : t("page.experience.seeDetails")}
-                    </button>
-                    {expandedExp?.find((id) => id === exp.id) && (
-                      <div className="mt-4">
-                        <div className="mb-4">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                            {t("page.experience.responsibilities")}
-                          </h4>
-                          <ul className="space-y-2">
-                            {exp.responsibilities.map(
-                              (responsibility, respIndex) => (
-                                <li
-                                  key={respIndex}
-                                  className="flex items-start gap-3"
-                                >
-                                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="text-gray-700">
-                                    {responsibility}
-                                  </span>
-                                </li>
-                              )
-                            )}
-                          </ul>
-                        </div>
-                        <div className="mb-4">
-                          <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                            {t("page.experience.technologies")}
-                          </h4>
-                          <div className="flex flex-wrap gap-2">
-                            {exp.technologies.map((tech) => (
-                              <span
-                                key={tech}
-                                className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium border"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
+          <ExperienceGrid experiences={filteredExperiences} />
 
-                        {exp.achievements && exp.achievements.length > 0 && (
-                          <div>
-                            <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                              {t("page.experience.achievements")}
-                            </h4>
-                            <ul className="space-y-2">
-                              {exp.achievements?.map((achievement, achIndex) => (
-                                <li
-                                  key={achIndex}
-                                  className="flex items-start gap-3"
-                                >
-                                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="text-gray-700">
-                                    {achievement}
-                                  </span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="mt-8 text-center">
+            <p className="text-gray-600">
+              {t("page.experience.showing", {
+                count: filteredExperiences.length,
+                total: data.experience.length,
+              })}
+              {selectedExperienceType !== "all" &&
+                ` - ${experienceTypes.find((t) => t.id === selectedExperienceType)?.name}`}
+            </p>
           </div>
         </div>
       </section>

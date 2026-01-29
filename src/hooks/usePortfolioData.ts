@@ -39,11 +39,12 @@ function resolvePortfolioData(
 }
 
 export function usePortfolioData() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [data, setData] = useState<PortfolioData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedExperienceType, setSelectedExperienceType] = useState<string>("all");
 
   useEffect(() => {
     const loadPortfolioData = () => {
@@ -98,6 +99,28 @@ export function usePortfolioData() {
       .length;
   };
 
+  // Experience types for the selector
+  const experienceTypes = [
+    { id: "all", name: t("page.experience.types.all"), description: t("page.experience.types.allDesc") },
+    { id: "freelance", name: t("page.experience.types.freelance"), description: t("page.experience.types.freelanceDesc") },
+    { id: "contract", name: t("page.experience.types.contract"), description: t("page.experience.types.contractDesc") },
+    { id: "internship", name: t("page.experience.types.internship"), description: t("page.experience.types.internshipDesc") },
+  ];
+
+  // Filter experiences based on selected type (using category field)
+  const filteredExperiences =
+    data?.experience.filter((exp) => {
+      if (selectedExperienceType === "all") return true;
+      return exp.category === selectedExperienceType;
+    }) || [];
+
+  // Get experiences count for each type
+  const getExperienceTypeCount = (typeId: string) => {
+    if (!data) return 0;
+    if (typeId === "all") return data.experience.length;
+    return data.experience.filter((exp) => exp.category === typeId).length;
+  };
+
   return {
     data,
     loading,
@@ -106,5 +129,10 @@ export function usePortfolioData() {
     setSelectedCategory,
     filteredProjects,
     getCategoryCount,
+    selectedExperienceType,
+    setSelectedExperienceType,
+    filteredExperiences,
+    getExperienceTypeCount,
+    experienceTypes,
   };
 }
