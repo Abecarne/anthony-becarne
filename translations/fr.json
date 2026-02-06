@@ -1,4 +1,9 @@
 {
+  "seo": {
+    "title": "Anthony Becarne - Développeur Software Freelance | Portfolio",
+    "description": "Développeur fullstack passionné, expert en React.js et Next.js. Je crée des applications scalables et user-friendly pour transformer la présence digitale des entreprises.",
+    "locale": "fr_FR"
+  },
   "personal": {
     "name": "Anthony Becarne",
     "title": "Freelance - Développeur Software",

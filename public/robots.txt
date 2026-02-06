@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anthony-becarne.vercel.app/sitemap.xml

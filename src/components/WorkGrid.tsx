@@ -214,6 +214,7 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               <a
                 href={project.demoUrl}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
               >
                 {t("page.work.demo")}
@@ -223,6 +224,7 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               <a
                 href={project.githubUrl}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
               >
                 {t("page.work.code")}

@@ -5,6 +5,7 @@ import MeshBackground from "@/components/MeshBackground";
 import WorkGrid from "@/components/WorkGrid";
 import { usePortfolioData } from "@/hooks/usePortfolioData";
 import { useScrollRevealAll } from "@/hooks/useScrollReveal";
+import { useSEO } from "@/hooks/useSEO";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -99,9 +100,9 @@ function HomePage() {
       <section id="work" className="min-h-screen px-6 py-24 bg-white/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 scroll-reveal">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t("page.work.title")}
-            </h1>
+            </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               {t("page.work.description")}
             </p>
@@ -138,9 +139,9 @@ function HomePage() {
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 scroll-reveal">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t("page.experience.title")}
-            </h1>
+            </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               {t("page.experience.description")}
             </p>
@@ -172,9 +173,9 @@ function HomePage() {
       <section id="education" className="min-h-screen px-6 py-24 bg-white/30">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 scroll-reveal">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t("page.education.title")}
-            </h1>
+            </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               {t("page.education.description")}
             </p>
@@ -270,9 +271,9 @@ function HomePage() {
       >
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 scroll-reveal">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t("page.contact.title")}
-            </h1>
+            </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               {t("page.contact.description")}
             </p>
@@ -341,6 +342,7 @@ function HomePage() {
                     <a
                       href={data.personal.socialLinks.github}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="w-10 h-10 bg-gray-800 text-white rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
                     >
                       <svg
@@ -354,6 +356,7 @@ function HomePage() {
                     <a
                       href={data.personal.socialLinks.linkedin}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"
                     >
                       <svg
@@ -459,6 +462,7 @@ function HomePage() {
                 <a
                   href="https://calendly.com/anthony-becarne/30min"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold text-base transition-all shadow-lg"
                 >
                   {t("page.cta.book")}
@@ -485,6 +489,8 @@ function HomePage() {
 }
 
 export default function App() {
+  useSEO();
+
   return (
     <div className="antialiased relative bg-gradient-to-br from-slate-100 via-white to-slate-100">
       <MeshBackground className="opacity-80" />
