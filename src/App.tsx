@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 
 import { HeroSection } from "@/components/HeroSection";
 import { Navbar } from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/react";
 
 function HomePage() {
   const {
@@ -499,6 +500,7 @@ export default function App() {
           <HomePage />
         </main>
       </div>
+      <Analytics />
     </div>
   );
 }
