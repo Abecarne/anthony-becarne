@@ -1,12 +1,14 @@
 export interface PersonalInfo {
   name: string;
   title: string;
-  subtitle: string;
   bio: string;
   location: string;
   email: string;
   phone: string;
-  profileImage: string;
+  resume?: string;
+  resumeSoftwareDeveloper?: string;
+  resumeProjectManager?: string;
+  profileImage?: string;
   socialLinks: {
     linkedin: string;
     github: string;
@@ -36,7 +38,7 @@ export interface WorkProject {
   githubUrl: string;
 }
 
-interface Education {
+export interface Education {
   id: number;
   institution: string;
   degree: string;
@@ -47,7 +49,7 @@ interface Education {
   achievements?: string[];
 }
 
-interface Experience {
+export interface Experience {
   id: number;
   category: string;
   position: string;
@@ -60,27 +62,31 @@ interface Experience {
   responsibilities: string[];
   technologies: string[];
   achievements?: string[];
+  focus?: string[];
+  website?: string;
+  preview?: string;
 }
 
-interface Skills {
-  showcase: string[];
-  frontend: string[];
-  backend: string[];
-  tools: string[];
-  soft: string[];
+export interface SkillGroup {
+  title: string;
+  items: string[];
 }
 
-interface Contact {
+export interface SkillCategory {
+  label: string;
+  groups: SkillGroup[];
+}
+
+export interface Skills {
+  development: SkillCategory;
+  management: SkillCategory;
+}
+
+export interface Contact {
   availability: string;
   preferredContact: string;
   timezone: string;
   languages: string[];
-  services: string[];
-  rates: {
-    daily: string;
-    project: string;
-    retainer: string;
-  };
 }
 
 export interface PortfolioData {

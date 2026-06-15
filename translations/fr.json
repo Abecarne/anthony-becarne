@@ -1,13 +1,13 @@
 {
   "seo": {
-    "title": "Anthony Becarne - Développeur Software Freelance | Portfolio",
-    "description": "Développeur fullstack passionné, expert en React.js et Next.js. Je crée des applications scalables et user-friendly pour transformer la présence digitale des entreprises.",
+    "title": "Anthony Becarne — Développeur web & Project Manager | Portfolio",
+    "description": "Développeur web et chef de projet. Je cadre, développe et livre des produits web fiables, de l'idée à la mise en production, en alliant développement fullstack et gestion de projet orientée produit.",
     "locale": "fr_FR"
   },
   "personal": {
     "name": "Anthony Becarne",
-    "title": "Freelance - Développeur Software",
-    "bio": "Développeur software passionné, expert en React.js et Next.js. Je crée des applications scalables, user-friendly et j'aide les entreprises à développer et transformer leur présence digitale.",
+    "title": "Développeur web & Project Manager",
+    "bio": "Développeur web et chef de projet, j'accompagne les produits numériques de l'idée à la mise en production : cadrage, développement fullstack et coordination d'équipe, pour livrer des solutions fiables et bien finies.",
     "location": "France",
     "email": "anthony.becarne@gmail.com",
     "phone": "+33 6 25 85 28 34",
@@ -15,7 +15,10 @@
     "socialLinks": {
       "linkedin": "https://linkedin.com/in/anthony-becarne",
       "github": "https://github.com/Abecarne"
-    }
+    },
+    "resume": "/assets/resume/CV_Anthony-Becarne.pdf",
+    "resumeSoftwareDeveloper": "/assets/resume/Anthony Becarne Resume.pdf",
+    "resumeProjectManager": "/assets/resume/CV_Anthony-Becarne.pdf"
   },
   "categories": [
     {
@@ -46,7 +49,12 @@
       "category": "game-development",
       "client": "Projet universitaire",
       "description": "Jeu FPS 3D réalisé avec Unity. Le jeu comporte 3 armes différentes, 3 types d'ennemis et un boss. Le joueur affronte des vagues d'ennemis pour gagner des points et améliorer ses armes dans une boutique off-game.",
-      "technologies": ["Unity", "C#", "Blender", "Git"],
+      "technologies": [
+        "Unity",
+        "C#",
+        "Blender",
+        "Git"
+      ],
       "duration": "2 mois",
       "year": "2024",
       "image": "/assets/works/rainbow_rumble_preview.gif",
@@ -91,7 +99,12 @@
       "category": "web-development",
       "client": "Projet personnel",
       "description": "Un site portfolio personnel présentant mes projets et mes compétences.",
-      "technologies": ["React.js", "TypeScript", "TailwindCSS", "Git"],
+      "technologies": [
+        "React.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Git"
+      ],
       "duration": "",
       "year": "2026",
       "image": "/assets/works/portfolio_home.png",
@@ -136,7 +149,12 @@
       "category": "game-development",
       "client": "Projet de studio indépendant",
       "description": "Sense est un RPG 3D innovant développé sous Unreal Engine 5. Le gameplay repose sur l'utilisation des sens humains. Le premier chapitre est un prototype démontrant les mécaniques liées à la vision. Dans une équipe de 7, j'étais Directeur Artistique, Level Designer, Artiste 3D et Game Designer.",
-      "technologies": ["Unreal Engine 5", "C++", "Blender 3D", "Perforce"],
+      "technologies": [
+        "Unreal Engine 5",
+        "C++",
+        "Blender 3D",
+        "Perforce"
+      ],
       "duration": "2 ans",
       "year": "2023",
       "image": "/assets/works/sense_preview.gif",
@@ -152,7 +170,11 @@
       "category": "ai-development",
       "client": "Projet universitaire",
       "description": "Gomoku AI est un projet qui implémente une IA pour le jeu classique Gomoku (Cinq-en-ligne). L'IA utilise MinMax pour prédire et contrer les mouvements du joueur.",
-      "technologies": ["C++", "Bash", "Git"],
+      "technologies": [
+        "C++",
+        "Bash",
+        "Git"
+      ],
       "duration": "1 mois",
       "year": "2024",
       "image": "/assets/works/gomokuAI.jpg",
@@ -168,7 +190,13 @@
       "category": "game-development",
       "client": "Projet universitaire",
       "description": "Clone multijoueur de R-Type réalisé en C++ avec un moteur de jeu personnalisé et SFML. Le jeu comporte plusieurs niveaux, des ennemis avec leur IA, ainsi qu'un boss. Jusqu'à 4 joueurs peuvent jouer en réseau local.",
-      "technologies": ["C++", "Boost", "SFML", "CMake", "Git"],
+      "technologies": [
+        "C++",
+        "Boost",
+        "SFML",
+        "CMake",
+        "Git"
+      ],
       "duration": "4 mois",
       "year": "2023",
       "image": "/assets/works/rtype_preview.gif",
@@ -233,7 +261,11 @@
       "category": "ai-development",
       "client": "Projet universitaire",
       "description": "Bot de trading utilisant une IA décisionnelle pour prédire le cours des cryptomonnaies et actions, et effectuer des trades.",
-      "technologies": ["Python", "Pandas", "NumPy"],
+      "technologies": [
+        "Python",
+        "Pandas",
+        "NumPy"
+      ],
       "duration": "2 mois",
       "year": "2023",
       "image": "/assets/works/trade.jpg",
@@ -249,7 +281,13 @@
       "category": "game-development",
       "client": "Projet universitaire",
       "description": "Création d'un jeu Bomberman 3D multijoueur avec un moteur personnalisé. Le jeu comporte plusieurs scènes, des ennemis avec IA, et supporte 4 joueurs en réseau local.",
-      "technologies": ["C++", "Raylib", "Boost", "Cmake", "Git"],
+      "technologies": [
+        "C++",
+        "Raylib",
+        "Boost",
+        "Cmake",
+        "Git"
+      ],
       "duration": "2 mois",
       "year": "2022",
       "image": "/assets/works/indie_gif.gif",
@@ -336,7 +374,13 @@
         "Internationalisation réussie en 6 langues",
         "Amélioration notable de l'UX",
         "Livraison de fonctionnalités clés pour la gestion des projets solaires"
-      ]
+      ],
+      "focus": [
+        "dev",
+        "pm"
+      ],
+      "website": "https://www.solteo.fr/",
+      "preview": "/assets/works/solteo_preview.png"
     },
     {
       "id": 3,
@@ -355,32 +399,18 @@
         "Développement de nouvelles fonctionnalités modifiant le comportement de la timeline d'édition vidéo.",
         "Collaboration directe avec l'équipe produit pour livrer des itérations rapides et testables."
       ],
-      "technologies": ["Flutter", "Dart", "Rust", "Git", "SQL"]
-    },
-    {
-      "id": 4,
-      "category": "freelance",
-      "position": "Développeur IA & Fullstack",
-      "company": "Verdia",
-      "image": "/assets/verdia_logo.jpeg",
-      "type": "Freelance",
-      "duration": "Juin - Août 2025",
-      "location": "Remote",
-      "description": "Développement full-stack d'une plateforme de conception de massifs paysagers durables. Création d'un PoC complet pour présenter le concept à un incubateur.",
-      "responsibilities": [
-        "Développement full-stack avec React.js et Next.js.",
-        "Conception et intégration base de données via Airtable.",
-        "Développement d'APIs custom et intégration de fonctionnalités IA via OpenAI.",
-        "Accompagnement du client de l'idée au prototype fonctionnel."
-      ],
       "technologies": [
-        "React.js",
-        "Next.js",
-        "TypeScript",
-        "Airtable",
-        "OpenAI",
-        "Git"
-      ]
+        "Flutter",
+        "Dart",
+        "Rust",
+        "Git",
+        "SQL"
+      ],
+      "focus": [
+        "dev"
+      ],
+      "website": "https://tellers.ai",
+      "preview": "/assets/works/tellers_preview.png"
     },
     {
       "id": 2,
@@ -407,7 +437,44 @@
         "FastAPI",
         "Gorgias",
         "Shopify"
-      ]
+      ],
+      "focus": [
+        "dev",
+        "pm"
+      ],
+      "website": "https://www.achille.ai/products/achille-insights",
+      "preview": "/assets/works/achille_preview.png"
+    },
+    {
+      "id": 4,
+      "category": "freelance",
+      "position": "Développeur IA & Fullstack",
+      "company": "Verdia",
+      "image": "/assets/verdia_logo.jpeg",
+      "type": "Freelance",
+      "duration": "Juin - Août 2025",
+      "location": "Remote",
+      "description": "Développement full-stack d'une plateforme de conception de massifs paysagers durables. Création d'un PoC complet pour présenter le concept à un incubateur.",
+      "responsibilities": [
+        "Développement full-stack avec React.js et Next.js.",
+        "Conception et intégration base de données via Airtable.",
+        "Développement d'APIs custom et intégration de fonctionnalités IA via OpenAI.",
+        "Accompagnement du client de l'idée au prototype fonctionnel."
+      ],
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Airtable",
+        "OpenAI",
+        "Git"
+      ],
+      "focus": [
+        "dev",
+        "pm"
+      ],
+      "website": "https://www.verdia.fr/",
+      "preview": "/assets/works/verdia_preview.png"
     },
     {
       "id": 5,
@@ -430,7 +497,9 @@
         "Software Engineering",
         "Game Development",
         "Enseignement"
-      ]
+      ],
+      "focus": ["dev", "pm"],
+      "website": "https://www.epitech.eu/programme-grande-ecole-informatique/"
     },
     {
       "id": 6,
@@ -454,6 +523,9 @@
         "Web Development",
         "Python",
         "JavaScript"
+      ],
+      "focus": [
+        "dev"
       ]
     },
     {
@@ -478,6 +550,9 @@
         "OpenCV",
         "Machine Learning",
         "3D Modeling"
+      ],
+      "focus": [
+        "dev"
       ]
     },
     {
@@ -496,50 +571,123 @@
         "Travail avec Qt et Boost",
         "Fiabilité et performance du logiciel"
       ],
-      "technologies": ["C++", "Qt", "Boost", "Développement Logiciel"]
-    },
-    {
-      "id": 9,
-      "category": "internship",
-      "position": "Développeur Frontend",
-      "company": "Open Classrooms",
-      "image": "/assets/openclassrooms_logo.jpg",
-      "type": "Stage",
-      "duration": "Août 2019",
-      "location": "France",
-      "description": "Développement de pages web dynamiques et responsives. Travail en HTML, CSS et JavaScript.",
-      "responsibilities": [
-        "Développement de pages web dynamiques",
-        "Implémentation de technologies modernes",
-        "Création d'interfaces utilisateur",
-        "Apprentissage des bonnes pratiques"
+      "technologies": [
+        "C++",
+        "Qt",
+        "Boost",
+        "Développement Logiciel"
       ],
-      "technologies": ["HTML", "CSS", "JavaScript"]
+      "focus": [
+        "dev"
+      ]
     }
   ],
   "skills": {
-    "showcase": ["React.js", "Next.js", "TypeScript", "Python"],
-    "frontend": [
-      "React.js",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "TailwindCSS",
-      "Sass"
-    ],
-    "backend": ["Node.js", "Python", "SQL", "MongoDB", "Express"],
-    "tools": ["Git", "Linux", "Blender", "Unity", "Unreal Engine"],
-    "soft": [
-      "Gestion de projet",
-      "Communication client",
-      "Leadership",
-      "Résolution de problèmes",
-      "Enseignement",
-      "Mentorat",
-      "Revue de code"
-    ]
+    "development": {
+      "label": "Développement",
+      "groups": [
+        {
+          "title": "Frontend",
+          "items": [
+            "React",
+            "Next.js",
+            "Vue.js",
+            "TypeScript",
+            "JavaScript",
+            "Tailwind CSS",
+            "shadcn/ui"
+          ]
+        },
+        {
+          "title": "Backend",
+          "items": [
+            "Python",
+            "FastAPI",
+            "Node.js",
+            "PostgreSQL",
+            "SQL",
+            "REST APIs"
+          ]
+        },
+        {
+          "title": "IA & Data",
+          "items": [
+            "RAG",
+            "Agents IA",
+            "LLM",
+            "Automatisation",
+            "OpenAI API",
+            "WhatsApp Business API"
+          ]
+        },
+        {
+          "title": "DevOps / Cloud",
+          "items": [
+            "Docker",
+            "GitHub Actions",
+            "Azure",
+            "AWS",
+            "Vercel",
+            "Supabase",
+            "CI/CD"
+          ]
+        },
+        {
+          "title": "Produit / Analytics",
+          "items": [
+            "PostHog",
+            "Jimo",
+            "Linear",
+            "PowerBI",
+            "PipeDrive"
+          ]
+        }
+      ]
+    },
+    "management": {
+      "label": "Project Management",
+      "groups": [
+        {
+          "title": "Produit",
+          "items": [
+            "Roadmap",
+            "Gestion de backlog",
+            "Agile / Scrum",
+            "Rédaction de user stories",
+            "Product discovery"
+          ]
+        },
+        {
+          "title": "Projet",
+          "items": [
+            "Coordination d'équipes pluridisciplinaires",
+            "Gestion des parties prenantes",
+            "Suivi de delivery",
+            "Animation de sprints"
+          ]
+        },
+        {
+          "title": "Analytics",
+          "items": [
+            "Google Analytics",
+            "PostHog",
+            "Jimo",
+            "PowerBI"
+          ]
+        },
+        {
+          "title": "Outils",
+          "items": [
+            "Figma",
+            "Linear",
+            "Notion",
+            "Trello",
+            "Jira",
+            "Miro"
+          ]
+        }
+      ]
+    }
   },
   "contact": {
     "availability": "Disponible pour de nouveaux projets",
@@ -550,18 +698,7 @@
       "Anglais (Courant)",
       "Espagnol (Intermédiaire avancé)",
       "Coréen (Intermédiaire)"
-    ],
-    "services": [
-      "Développement Web Full-Stack",
-      "Développement Frontend et UI/UX",
-      "Développement logiciel",
-      "Consultation Technique"
-    ],
-    "rates": {
-      "daily": "300-400€/jour",
-      "project complet": "À partir de 2 000€",
-      "retainer": "À partir de 3 000€/mois"
-    }
+    ]
   },
   "page": {
     "freelanceBadge": "Disponible en freelance",
@@ -572,7 +709,8 @@
       "work": "Projets",
       "education": "Formation",
       "experience": "Expérience",
-      "contact": "Contact"
+      "contact": "Contact",
+      "skills": "Compétences"
     },
     "work": {
       "title": "Mes Projets",
@@ -585,7 +723,9 @@
       "demo": "Voir la démo",
       "code": "Voir le code",
       "noProjects": "Aucun projet trouvé pour cette catégorie.",
-      "showing": "Affichage de {{count}} sur {{total}} projets"
+      "showing": "Affichage de {{count}} sur {{total}} projets",
+      "showMore": "Voir plus de projets",
+      "showLess": "Voir moins"
     },
     "experience": {
       "title": "Expérience Professionnelle",
@@ -606,7 +746,14 @@
         "contractDesc": "CDI et CDD",
         "internship": "Stage",
         "internshipDesc": "Stages en entreprise"
-      }
+      },
+      "focus": {
+        "dev": "Développement",
+        "pm": "Project Management"
+      },
+      "website": "Visiter le site",
+      "showMore": "Voir plus d'expériences",
+      "showLess": "Voir moins"
     },
     "education": {
       "title": "Formation",
@@ -628,15 +775,6 @@
         "title": "Disponibilité",
         "description": "Je suis actuellement disponible pour de nouveaux projets."
       },
-      "services": {
-        "title": "Services proposés"
-      },
-      "pricing": {
-        "title": "Tarifs",
-        "daily": "Taux journalier",
-        "project": "Tarif par projet",
-        "retainer": "Forfait mensuel"
-      },
       "languages": {
         "title": "Langues"
       }
@@ -648,7 +786,27 @@
       "email": "Envoyer un email",
       "call": "Appeler maintenant",
       "viewWork": "Voir mes projets",
-      "downloadCV": "Télécharger mon CV"
+      "downloadCV": "Télécharger mon CV",
+      "downloadSoftwareDeveloperCV": "CV Software Developer",
+      "downloadProjectManagerCV": "CV Project Manager / Owner"
+    },
+    "hero": {
+      "roleDev": "Développeur web",
+      "rolePm": "Project Manager",
+      "lead": "Je conçois, développe et pilote des produits numériques, de l'idée jusqu'à la mise en production."
+    },
+    "skills": {
+      "title": "Compétences",
+      "description": "Deux casquettes complémentaires : construire le produit et piloter le projet.",
+      "categories": {
+        "dev": "Développement",
+        "pm": "Product Management"
+      }
+    },
+    "footer": {
+      "tagline": "Développeur web & Project Manager.",
+      "rights": "Tous droits réservés.",
+      "backToTop": "Haut de page"
     }
   }
 }

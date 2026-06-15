@@ -101,15 +101,15 @@ const LanguageSwitcher = () => {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1 rounded-full border border-gray-200 bg-white/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide shadow-sm transition-colors hover:bg-gray-50"
+        className="flex items-center gap-1 rounded-full border border-line bg-surface px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide shadow-sm transition-colors hover:border-line-strong"
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-label={`Current language: ${activeLanguage.label}. Click to change.`}
       >
         <ActiveFlag className={iconClasses} />
-        <span className="text-gray-700">{activeLanguage.abbr}</span>
+        <span className="text-ink">{activeLanguage.abbr}</span>
         <svg
-          className={`h-3 w-3 text-gray-500 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`h-3 w-3 text-faint transition-transform ${isOpen ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -119,7 +119,7 @@ const LanguageSwitcher = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full mt-1 flex flex-col gap-1 rounded-lg border border-gray-200 bg-white p-1 shadow-lg">
+        <div className="absolute right-0 top-full z-50 mt-1 flex flex-col gap-1 rounded-lg border border-line bg-surface p-1 shadow-card">
           {otherLanguages.map((lang) => {
             const Flag = lang.Flag;
             return (
@@ -130,7 +130,7 @@ const LanguageSwitcher = () => {
                   i18n.changeLanguage(lang.code);
                   setIsOpen(false);
                 }}
-                className="flex items-center gap-2 rounded-md px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-gray-600 transition-colors hover:bg-gray-100"
+                className="flex items-center gap-2 rounded-md px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted transition-colors hover:bg-canvas"
                 aria-label={`Switch to ${lang.label}`}
               >
                 <Flag className={iconClasses} />

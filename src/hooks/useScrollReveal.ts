@@ -1,25 +1,23 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
-interface UseScrollRevealOptions {
-  threshold?: number;
-  rootMargin?: string;
-}
-
-export function useScrollReveal<T extends HTMLElement>(
-  options: UseScrollRevealOptions = {}
+/**
+ * Adds the `is-visible` class to every `.reveal` element as it enters
+ * the viewport, triggering a short, subtle entrance animation.
+ * Newly mounted elements (e.g. after filtering or "see more") are picked
+ * up via a MutationObserver.
+ */
+export function useScrollReveal(
+  selector = ".reveal",
+  { threshold = 0.12, rootMargin = "0px 0px -40px 0px" } = {}
 ) {
-  const ref = useRef<T>(null);
-  const { threshold = 0.1, rootMargin = "0px 0px -50px 0px" } = options;
-
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+    const observed = new Set<Element>();
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            entry.target.classList.add("is-visible");
             observer.unobserve(entry.target);
           }
         });
@@ -27,57 +25,18 @@ export function useScrollReveal<T extends HTMLElement>(
       { threshold, rootMargin }
     );
 
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, [threshold, rootMargin]);
-
-  return ref;
-}
-
-export function useScrollRevealAll(
-  selector: string,
-  options: UseScrollRevealOptions = {}
-) {
-  const { threshold = 0.1, rootMargin = "0px 0px -50px 0px" } = options;
-
-  useEffect(() => {
-    const observedElements = new Set<Element>();
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold, rootMargin }
-    );
-
-    const observeElements = () => {
-      const elements = document.querySelectorAll(selector);
-      elements.forEach((el) => {
-        if (!observedElements.has(el) && !el.classList.contains("visible")) {
-          observedElements.add(el);
+    const observeAll = () => {
+      document.querySelectorAll(selector).forEach((el) => {
+        if (!observed.has(el) && !el.classList.contains("is-visible")) {
+          observed.add(el);
           observer.observe(el);
         }
       });
     };
 
-    // Initial observation
-    observeElements();
-
-    // Use MutationObserver to detect new elements added to the DOM
-    const mutationObserver = new MutationObserver(() => {
-      observeElements();
-    });
-
-    mutationObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
+    observeAll();
+    const mutationObserver = new MutationObserver(observeAll);
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       observer.disconnect();
